@@ -9,4 +9,8 @@ public class Languages {
     public static void main(String[] args) {
 
     }
+
+    public void setLanguage(){
+        1+1;
+    }
 }
