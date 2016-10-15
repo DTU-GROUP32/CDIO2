@@ -9,12 +9,10 @@ public class GameBoard {
     private Field[] fields = new Field[11];
 
     public GameBoard(){
-        this.createGame();
-        this.playGame();
+        this.chooseLanguage();
     }
 
     public void createGame(){
-        this.chooseLanguage();
         this.createPlayers();
         this.initFields();
     }
