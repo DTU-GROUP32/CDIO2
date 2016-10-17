@@ -35,7 +35,7 @@ public class Field {
 	}
 	
 	/**
-	 * Method that takes in a Player objekt, enforced the effect of the field on the players balance,
+	 * Method that takes in a Player objekt, enforces the effect of the field on the players balance,
 	 * and returns whether or not the field grants and extra turn.
 	 * @param Player player
 	 * @return boolean extraTurn
