@@ -1,7 +1,7 @@
 package cdio;
 import cdio.*;
 public class dansksprog {
-	
+
 	/** 
 	 * Welcome message for user with commands available.
 	 * @return
@@ -12,7 +12,7 @@ public class dansksprog {
 		return welcomeMsg;
 
 	}
-	
+
 	/** 
 	 * Asks for playername 
 	 * @return
@@ -21,7 +21,7 @@ public class dansksprog {
 		String askforplayername = "Indtast spiller " + playernumber + "'s navn";
 		return askforplayername;	
 	}
-	
+
 	/** 
 	 * Tells user that the game will start shortly. 
 	 * @return
@@ -36,18 +36,19 @@ public class dansksprog {
 	 */
 	public String preMsg(){
 		String premsg = "Det er " + players[i].getName() + "'s tur" + '\n' + "Hvis du har brug for hjælp skriv help";
-				return premsg;
+		return premsg;
 	}
-	
+
 	/**
 	 * Displays the result of the dice roll. 
 	 * @return
 	 */
 	public String rollResult(){
 		String resultofroll = player.getName() + " slog en " + player.dicecup.getDices()[0].getFaceValue() + "'er og en " + player.dicecup.getDices()[1].getFaceValue() + "'er/n";
-       return resultofroll;
+		return resultofroll;
 	}
-	
+
 }
+
 
 
