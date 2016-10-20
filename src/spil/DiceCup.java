@@ -2,15 +2,14 @@ package spil;
 
 public class DiceCup {
 	
-	private int n = 2;	
-	private Dice[] dices = new Dice[n];
+	private Dice[] dices;
 	private int sum;
 	
 	/**
 	 * Default constructor
 	 */
-	public DiceCup() {
-		
+	public DiceCup(Dice d1, Dice d2) {
+		this.dices = new Dice[] {d1, d2};
 	}
 	
 	/**
