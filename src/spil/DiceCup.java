@@ -1,17 +1,30 @@
 package spil;
 
 public class DiceCup {
-	
+
 	private Dice[] dices;
 	private int sum;
-	
+
+
 	/**
 	 * Default constructor
 	 */
-	public DiceCup(Dice d1, Dice d2) {
-		this.dices = new Dice[] {d1, d2};
+	public DiceCup() {
+		this(2);
 	}
-	
+
+
+	/**
+	 * Secondary constructor
+	 * @param diceCount
+	 */
+	public DiceCup(int diceCount) {
+		for(int i = 0; i < diceCount; i++) {
+			this.dices[i] = new Dice();
+		}
+	}
+
+
 	/**
 	 * Gets the array of dices
 	 * @return
@@ -19,7 +32,7 @@ public class DiceCup {
 	public Dice[] getDices() {	
 		return this.dices;
 	}
-	
+
 	/**
 	 * Rolls all of the dices, which sets them to a random number inbetween 1 and the number of sides it has
 	 */
@@ -28,7 +41,8 @@ public class DiceCup {
 			dices[i].roll();
 		}
 	}
-	
+
+
 	/**
 	 * Gets the sum of the dices
 	 * @return sum
@@ -40,7 +54,8 @@ public class DiceCup {
 		}
 		return this.sum;
 	}
-	
+
+
 	/**
 	 * Sets the sides of the first dice to 'a' and the sides of the second dice to 'b', if the sum of 'a' and 'b' is 12, which returns true if true
 	 * @param a
@@ -48,17 +63,17 @@ public class DiceCup {
 	 * @return 
 	 */
 	public boolean setDiceSides(int a, int b) {
-		
+
 		if (a+b == 12) {
-			
+
 			// dices[0].setSides(a);
 			// dices[1].setSides(b);
-			
+
 			return true;
 		} else
 			return false;
-		
+
 	}
-		
-	
+
+
 }
