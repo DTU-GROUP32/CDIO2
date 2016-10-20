@@ -9,15 +9,15 @@ public class Dansk {
 	 */
 
 	public String welcomeMsg(){
-		return "Velkommen til spillet!" + '\n' + "Skriv help for at åbne en hjælpemenu";
+		return "Velkommen til spillet!";
 	}
 
 	/** 
 	 * Asks for playername 
 	 * @return
 	 */
-	public String askForPlayerName(playernumber){
-		return "Indtast spiller " + playernumber + "'s navn";
+	public String askForPlayerName(player){
+		return "Indtast spiller " + player.getplayernumber + "'s navn";
 	}
 
 
@@ -26,14 +26,14 @@ public class Dansk {
 	 * @return
 	 */
 	public String readyToBegin(){
-		return "Spillet vil nu begynde"; // Skal bruger trykke på noget for at starte?
+		return "Spillet vil nu begynde. Den spiller der først når 3000 point har vundet spillet. + '\n' + Du kan skrive help når det bliver din tur, for en åbne en hjælpemenu "; // Skal bruger trykke på noget for at starte?
 	}
 	/**
 	 * Premessage at the start of players turn, tells player help option. 
 	 * @return
 	 */
 	public String preMsg(player){
-		return premsg = "Det er " + player.getname + "'s tur" + '\n' + "Hvis du har brug for hjælp skriv help"; // getbank.getbalance
+		return premsg = "Det er " + player.getname + "'s tur"; // getbank.getbalance
 	}
 
 	/**
@@ -42,37 +42,37 @@ public class Dansk {
 	 */
 
 	public String rollResult(dicecup){
-		return resultofroll = "Du slog en " + dicecup.getDices()[0].getFaceValue() + "'er og en " + dicecup.getDices()[1].getFaceValue() + "'er/n";
+		return resultofroll = "Du slog en " + dicecup.getDices()[0].getFaceValue() + "'er og en " + dicecup.getDices()[1].getFaceValue() + "'er";
 	}
 	/**
 	 * switch case til at bestemme hvad der skal printes ud fra hvad man lander på.
 	 * @return
 	 */
 	public String fieldMsg(dicecup){
-		int field = dicecup.getDices(); // Hvilke input?
+		int field = dicecup.getDices(); 
 		String fieldString;
 		switch (field) {
-		case 2:  fieldString = "Du er landet på 2...";
+		case 2:  fieldString = "Du har kravlet op i det høje tårn og finder 250!";
 		break;
-		case 3:  fieldString = "Du er landet på 3...";
+		case 3:  fieldString = "Du er faldet ned i krateret og det koster dig 100 at komme op.";
 		break;
-		case 4:  fieldString = "Du er landet på 4...";
+		case 4:  fieldString = "Du står overfor en stor port til et palads. Vagterne giver dig 100 i velkomst gave, da du passerer";
 		break;
-		case 5:  fieldString = "Du er landet på 5...";
+		case 5:  fieldString = "Du er faret vild i den kolde ørken, men finder en bod der sælger varme handsker, det koster dig 20.";
 		break;
-		case 6:  fieldString = "Du er landet på 6...";
+		case 6:  fieldString = "Du er ankommet til den befæstede by! Du finder en mand i nød og hjælper ham. Han giver dig 180 som tak.";
 		break;
-		case 7:  fieldString = "Du er landet på 7...";
+		case 7:  fieldString = "Du ser et kloster i horisonten og går nærmere for at udforske det. Du går derfra med det du kom med.";
 		break;
-		case 8:  fieldString = "Du er landet på 8...";
+		case 8:  fieldString = "Du er er gået ind i en sort hule for at udforske den, du bliver taget til fange af de indfødte og skal betale 70 for at gå derfra.";
 		break;
-		case 9:  fieldString = "Du er landet på 9...";
+		case 9:  fieldString = "Du bestiger bjergene og finder nogle bjerghytter, de indfødte synes om dig og giver dig 60";
 		break;
-		case 10:  fieldString = "Du er landet på 10...";
+		case 10:  fieldString = "Du ankommer til en stor mur og kan ikke passere. Vareulve står vagt i porten og vil ikke lade dig gå. Du giver dem 80, men som tak får du lov til at passere og slå igen.";
 		break;
-		case 11: fieldString = "Du er landet på 11...";
+		case 11: fieldString = "Du er røget ned i et hul, en mand passerer og hjælper dig, du giver ham 50 som tak.";
 		break;
-		case 12: fieldString = "Du er landet på 12...";
+		case 12: fieldString = "Du ankommer til en guldmine og undersøger den. Du finder guld og sælger det for 650!";
 		break;		
 		}
 		System.out.println(fieldString);
@@ -82,7 +82,7 @@ public class Dansk {
 	 * @return
 	 */
 	public String postMsg(player){
-		return player.getname() + "Har nu " + player.getbank() + "point";		
+		return " Efter denne runde har " + player.getname() + " nu " + player.getbank() + " point";		
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class Dansk {
 	 * @return
 	 */
 	public String printRules(){
-		return "Regler blablabla";
+		return "Regler blablabla"; // Mangler disse!
 	}
 	/**
 	 * Udskriver pointstillingen
@@ -112,7 +112,7 @@ public class Dansk {
 	 */
 	public String printScore(player){
 		for (int i = 0; i < players.length; i++) 
-			System.out.println(player[i].getbank);
+			System.out.println("Stillingen er:" + '\n'  + "Spiller 1:" player[i].getbank + '\n' + "Spiller 2:" + player[i].getbank;
 	}
 
 	/** 
