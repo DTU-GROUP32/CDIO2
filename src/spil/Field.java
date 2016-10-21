@@ -20,8 +20,7 @@ public class Field {
 	 * @param int effect
 	 */
 	public Field(int effect) {
-		this.effect = effect;
-		this.extraTurn = false;
+		this(effect, false);
 	}
 	
 	/**
@@ -35,12 +34,12 @@ public class Field {
 	}
 	
 	/**
-	 * Method that takes in a Player objekt, enforces the effect of the field on the players balance,
+	 * Method that takes in a Player object, enforces the effect of the field on the players balance,
 	 * and returns whether or not the field grants and extra turn.
 	 * @param Player player
 	 * @return boolean extraTurn
 	 */
-	public boolean LandOnField(Player player) {
+	public boolean landOnField(Player player) {
 		player.changeBalance(this.effect);
 		return extraTurn;
 	}
