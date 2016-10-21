@@ -40,7 +40,7 @@ public class Field {
 	 * @return boolean extraTurn
 	 */
 	public boolean landOnField(Player player) {
-		player.changeBalance(this.effect);
+		player.getBank().changeBalance(this.effect);
 		return extraTurn;
 	}
 }
