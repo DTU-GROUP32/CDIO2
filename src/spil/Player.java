@@ -15,20 +15,12 @@ public class Player{
 
 	}
 
-	/**
-	 * Sets player names on player object
-	 * @param playerName
-	 */
-	public void setPlayerName(String playerName){
-		this.playerName = playerName;
-	}
-
 	
 	/**
 	 * Return player's bank account from Bank object
 	 * @return
 	 */
-	public Bank getBankAccount(){
+	public Bank getBank(){
 		return bankAccount;
 	}
 	
@@ -36,7 +28,7 @@ public class Player{
 	 * Return player's name from Player object
 	 * @return
 	 */
-	public String getPlayerName(){
+	public String getName(){
 		return playerName;
 	}
 	
