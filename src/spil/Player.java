@@ -2,25 +2,25 @@ package spil;
 
 public class Player{
 
-	private String playerName;
-	private Bank bankAccount;
-	private int id; 
-	private int nextId = 0; 
+	private String name;
+	private Bank bank;
+	private int ID; 
+	private int nextID = 0; 
 
 
 	// Create a bank account for each player and set player's credit to 1000
 	public Player() {
-		this.id = nextId++;
-		bankAccount = new Bank(1000);
+		this.ID = nextID++;
+		bank = new Bank(1000);
 
 	}
 
 	/**
 	 * Sets player names on player object
-	 * @param playerName
+	 * @param player
 	 */
-	public void setPlayerName(String playerName){
-		this.playerName = playerName;
+	public void setPlayer(String name){
+		this.name = name;
 	}
 
 	
@@ -28,8 +28,8 @@ public class Player{
 	 * Return player's bank account from Bank object
 	 * @return
 	 */
-	public Bank getBankAccount(){
-		return bankAccount;
+	public Bank getBank(){
+		return bank;
 	}
 	
 	/**
@@ -37,7 +37,7 @@ public class Player{
 	 * @return
 	 */
 	public String getPlayerName(){
-		return playerName;
+		return name;
 	}
 	
 	/**
@@ -45,7 +45,7 @@ public class Player{
 	 * @return
 	 */
 	public int getID(){
-		return id;
+		return ID;
 	}
 	
 	/**
@@ -54,6 +54,6 @@ public class Player{
 	 */
 	public int getNextID(){
 
-		return nextId;
+		return nextID;
 	}
 }
