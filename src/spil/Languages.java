@@ -1,4 +1,4 @@
-package spil.Languages;
+package Languages;
 
 public class Dansk {
 	public Dansk (){}
