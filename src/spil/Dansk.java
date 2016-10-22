@@ -1,13 +1,14 @@
-package Languages;
+package spil;
 
-public class Dansk {
-	public Dansk (){}
+public class Dansk implements Language{
+	
+	public Dansk(){}
 
 	/** 
 	 * Welcome message for user with commands available.
 	 * @return
 	 */
-
+	@Override
 	public String welcomeMsg(){
 		return "Velkommen til spillet!";
 	}
@@ -16,42 +17,45 @@ public class Dansk {
 	 * Asks for playername 
 	 * @return
 	 */
-	public String askForPlayerName(player){
-		return "Indtast spiller " + player.getplayernumber + "'s navn";
+	@Override
+	public String askForPlayerName(int playerNumber){
+		return "Indtast spiller " + playerNumber + "'s navn";
 	}
-
 
 	/** 
 	 * Tells user that the game will start shortly. 
 	 * @return
 	 */
+	@Override
 	public String readyToBegin(){
 		return "Spillet vil nu begynde. Den spiller der først når 3000 point har vundet spillet. + '\n' + Du kan skrive help når det bliver din tur, for en åbne en hjælpemenu "; // Skal bruger trykke på noget for at starte?
 	}
+	
 	/**
 	 * Premessage at the start of players turn, tells player help option. 
 	 * @return
 	 */
-	public String preMsg(player){
-		return premsg = "Det er " + player.getname + "'s tur"; // getbank.getbalance
+	public String preMsg(Player player){
+		return "Det er " + player.getName() + "'s tur"; // getbank.getbalance
 	}
 
 	/**
 	 * Displays the result of the dice roll. 
 	 * @return
 	 */
-
-	public String rollResult(dicecup){
-		return resultofroll = "Du slog en " + dicecup.getDices()[0].getFaceValue() + "'er og en " + dicecup.getDices()[1].getFaceValue() + "'er";
+	@Override
+	public String rollResult(DiceCup diceCup){
+		return "Du slog en " + diceCup.getDices()[0].getFaceValue() + "'er og en " + diceCup.getDices()[1].getFaceValue() + "'er";
 	}
+	
 	/**
 	 * switch case til at bestemme hvad der skal printes ud fra hvad man lander på.
 	 * @return
 	 */
-	public String fieldMsg(dicecup){
-		int field = dicecup.getDices(); 
+	@Override
+	public String fieldMsg(DiceCup diceCup){
 		String fieldString;
-		switch (field) {
+		switch (diceCup.getSum()) {
 		case 2:  fieldString = "Du har kravlet op i det høje tårn og finder 250!";
 		break;
 		case 3:  fieldString = "Du er faldet ned i krateret og det koster dig 100 at komme op.";
@@ -73,67 +77,85 @@ public class Dansk {
 		case 11: fieldString = "Du er røget ned i et hul, en mand passerer og hjælper dig, du giver ham 50 som tak.";
 		break;
 		case 12: fieldString = "Du ankommer til en guldmine og undersøger den. Du finder guld og sælger det for 650!";
-		break;		
+		break;	
+		default: fieldString = "Ukendt felt DESVÆRRE!";
+		break;
 		}
-		System.out.println(fieldString);
+		return fieldString;
 	}
+	
 	/**
 	 * Udskriver hvor mange point silleren har efter kast
 	 * @return
 	 */
-	public String postMsg(player){
-		return " Efter denne runde har " + player.getname() + " nu " + player.getbank() + " point";		
+	@Override
+	public String postMsg(Player player){
+		return " Efter denne runde har " + player.getName() + " nu " + player.getBank() + " point";		
 	}
 
 	/**
 	 * Udskriver hvem der har vundet med hvor mange point
 	 * @return
 	 */
-	public String winnerMsg(player){
-		return player.getname() + " Har vundet spillet med " + player.getbank() + "point!";
+	@Override
+	public String winnerMsg(Player player){
+		return player.getName() + " Har vundet spillet med " + player.getBank() + "point!";
 	}
 	/**
 	 * Udskriver hvilke muligheder der er i hjælpemenuen
 	 * @return
 	 */
+	@Override
 	public String menu(){
 		return "Skriv 1 for regler" + '\n' + "Skriv 2 for pointstillingen" + '\n' + "Skriv 3 for at skifte terninger" + '\n' + "Skriv 4 for at afslutte spillet";
 	}
+	
 	/**
 	 * Udskriver reglerne 
 	 * @return
 	 */
+	@Override
 	public String printRules(){
 		return "Regler blablabla"; // Mangler disse!
 	}
+	
 	/**
 	 * Udskriver pointstillingen
 	 * @return
 	 */
-	public String printScore(player){
+	@Override
+	public String printScore(Player[] players){
+		StringBuilder str = new StringBuilder();
+		str.append("Stillingen er:");
 		for (int i = 0; i < players.length; i++) 
-			System.out.println("Stillingen er:" + '\n'  + "Spiller 1:" player[i].getbank + '\n' + "Spiller 2:" + player[i].getbank;
+			str.append("\n" + players[i].getName() + " har " + players[i].getBank().getBalance());
+			return str.toString();
 	}
 
 	/** 
 	 * Udskriver hvordan man ændre terninger
 	 * @return
 	 */
+	@Override
 	public String changeDices(){
 		return "Indtast hvor mange øjne de to terninger skal have"; // Summen måtte kun gå op til 12?
 	}
+	
 	/**
 	 * Udskriver at terningerne succesfuldt er ændret		
 	 * @return
 	 */
+	@Override
 	public String printDiceChangeSucces(){
 		return "Terningerne er nu ændret!";
 	}
+	
 	/**
 	 * Udskriver fejlbesked hvis terningerne ikke kunne ændres
 	 * @return
 	 */
+	@Override
 	public String printDiceChangeNotExecuted(){
-		return "Terningerne kunne ikke ændres, prøv igen!";
+		return "Terningerne kunne ikke ændres";
 	}
 }
