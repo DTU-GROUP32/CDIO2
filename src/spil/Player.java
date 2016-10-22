@@ -5,7 +5,7 @@ public class Player{
 	private String name;
 	private Bank bank;
 	private int ID; 
-	private int nextID = 0; 
+	private static int nextID = 0; 
 
 
 	// Create a bank account for each player and set player's credit to 1000
