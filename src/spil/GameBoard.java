@@ -108,7 +108,7 @@ public class GameBoard {
 	}
 
 	public void postWinner(Player winner){
-		System.out.println("");
+
 	}
 
 
