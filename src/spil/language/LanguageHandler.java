@@ -122,4 +122,11 @@ public class LanguageHandler {
 	public String printDiceChangeNotExecuted(){
 		return selectedLanguage.printDiceChangeNotExecuted();
 	}
+	/**
+	 * Udskriver spilmenu
+	 * @return
+	 */
+	public String printGameMenu(){
+		return selectedLanguage.printGameMenu();
+	}
 }

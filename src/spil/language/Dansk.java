@@ -93,7 +93,7 @@ public class Dansk implements Language{
 	 */
 	@Override
 	public String postMsg(Player player){
-		return " Efter denne runde har " + player.getName() + " nu " + player.getBank().getBalance() + " point";
+		return "Efter denne runde har " + player.getName() + " nu " + player.getBank().getBalance() + " point\n";
 	}
 
 	/**
@@ -160,5 +160,16 @@ public class Dansk implements Language{
 	@Override
 	public String printDiceChangeNotExecuted(){
 		return "Terningerne kunne ikke ændres";
+	}
+
+	/**
+	 * Udskriver spilmenu
+	 * @return
+	 */
+	@Override
+	public String printGameMenu(){
+		return "Tast 1 for at fortsætte tur\n" +
+				"Tast 2 for at ændre sprog\n" +
+				"Tast 3 for at afslutte spillet";
 	}
 }
