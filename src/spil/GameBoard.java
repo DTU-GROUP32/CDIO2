@@ -14,6 +14,14 @@ public class GameBoard {
 	private boolean stopGame = false;
 
 	public GameBoard(){}
+	/**
+	 * Default constructor
+	 */
+	public void createGame(){
+		diceCup  = new DiceCup();
+		this.createPlayers();
+		this.initFields();
+	}
 
 	/**
 	 * Entry method for starting the program
@@ -26,12 +34,9 @@ public class GameBoard {
 		spil.playGame();
 	}
 
-	public void createGame(){
-		diceCup  = new DiceCup();
-		this.createPlayers();
-		this.initFields();
-	}
-
+	/**
+	 * Method to start playing the game
+	 */
 	public void playGame(){
 		while(winner == null && !stopGame){
 			for (int i=0; i<this.players.length; i++){
@@ -43,6 +48,9 @@ public class GameBoard {
 		}
 	}
 
+	/**
+	 * Method to change & set language for the gameboard
+	 */
 	public void chooseLanguage(){
 		String choice = this.getInput("Type 1 for English \nTryk 2 for dansk");
 		switch (choice){
@@ -123,6 +131,10 @@ public class GameBoard {
 		}
 	}
 
+	/**
+	 * Gamemenu shown before the start of each turn. Lets player end game, continue or switch language
+	 * @return
+	 */
 	public boolean gameMenu() {
 		String choice = this.getInput(language.printGameMenu());
 		switch (choice) {
@@ -138,11 +150,20 @@ public class GameBoard {
 		}
 	}
 
+	/**
+	 * Prints winner message and result
+	 * @param winner Player
+	 */
 	public void postWinner(Player winner){
-
+		System.out.println(language.winnerMsg(winner));
 	}
 
 
+	/**
+	 * Method created to take a user-input from the scanner and print a message beforehand
+	 * @param message String
+	 * @return userInput String
+	 */
 	public String getInput(String message){
 		System.out.println(message);
 		Scanner input = new Scanner(System.in);
