@@ -13,17 +13,17 @@ public class Player{
 		this.ID = nextID++;
 		bank = new Bank(1000);
 
-	}
 
+	}
 	/**
 	 * Sets player names on player object
 	 * @param player
 	 */
-	public void setPlayer(String name){
+	public void setName(String name){
 		this.name = name;
 	}
 
-	
+
 	/**
 	 * Return player's bank account from Bank object
 	 * @return
@@ -31,15 +31,15 @@ public class Player{
 	public Bank getBank(){
 		return bank;
 	}
-	
+
 	/**
 	 * Return player's name from Player object
 	 * @return
 	 */
-	public String getPlayerName(){
+	public String getName(){
 		return name;
 	}
-	
+
 	/**
 	 * Return player's ID
 	 * @return
@@ -47,7 +47,7 @@ public class Player{
 	public int getID(){
 		return ID;
 	}
-	
+
 	/**
 	 * Return next ID from ID object
 	 * @return
