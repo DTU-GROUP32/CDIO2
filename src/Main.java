@@ -5,5 +5,6 @@ public class Main {
         GameBoard spil = new GameBoard();
         spil.chooseLanguage();
         spil.createGame();
+        spil.playGame();
     }
 }

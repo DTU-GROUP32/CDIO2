@@ -13,7 +13,6 @@ public class Player{
 		playerName = name;
 		this.id = nextId++;
 		bankAccount = new Bank(1000);
-
 	}
 
 	
