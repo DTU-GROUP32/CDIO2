@@ -1,7 +1,5 @@
 package spil;
 
-import spil.Player;
-
 public class Field {
 	
 	/**

@@ -28,13 +28,14 @@ public class Dansk implements Language{
 	 */
 	@Override
 	public String readyToBegin(){
-		return "Spillet vil nu begynde. Den spiller der først når 3000 point har vundet spillet. + '\n' + Du kan skrive help når det bliver din tur, for en åbne en hjælpemenu "; // Skal bruger trykke på noget for at starte?
+		return "Spillet vil nu begynde. Den spiller der fÃ¸rst nÃ¥r 3000 point har vundet spillet. + '\n' + Du kan skrive help nÃ¥r det bliver din tur, for en Ã¥bne en hjÃ¦lpemenu "; // Skal bruger trykke pÃ¥ noget for at starte?
 	}
 	
 	/**
 	 * Premessage at the start of players turn, tells player help option. 
 	 * @return
 	 */
+	@Override
 	public String preMsg(Player player){
 		return "Det er " + player.getName() + "'s tur"; // getbank.getbalance
 	}
@@ -49,36 +50,36 @@ public class Dansk implements Language{
 	}
 	
 	/**
-	 * switch case til at bestemme hvad der skal printes ud fra hvad man lander på.
+	 * switch case til at bestemme hvad der skal printes ud fra hvad man lander pÃ¥.
 	 * @return
 	 */
 	@Override
 	public String fieldMsg(DiceCup diceCup){
 		String fieldString;
 		switch (diceCup.getSum()) {
-		case 2:  fieldString = "Du har kravlet op i det høje tårn og finder 250!";
+		case 2:  fieldString = "Du har kravlet op i det hÃ¸je tÃ¥rn og finder 250!";
 		break;
 		case 3:  fieldString = "Du er faldet ned i krateret og det koster dig 100 at komme op.";
 		break;
-		case 4:  fieldString = "Du står overfor en stor port til et palads. Vagterne giver dig 100 i velkomst gave, da du passerer";
+		case 4:  fieldString = "Du stÃ¥r overfor en stor port til et palads. Vagterne giver dig 100 i velkomst gave, da du passerer";
 		break;
-		case 5:  fieldString = "Du er faret vild i den kolde ørken, men finder en bod der sælger varme handsker, det koster dig 20.";
+		case 5:  fieldString = "Du er faret vild i den kolde Ã¸rken, men finder en bod der sÃ¦lger varme handsker, det koster dig 20.";
 		break;
-		case 6:  fieldString = "Du er ankommet til den befæstede by! Du finder en mand i nød og hjælper ham. Han giver dig 180 som tak.";
+		case 6:  fieldString = "Du er ankommet til den befÃ¦stede by! Du finder en mand i nÃ¸d og hjÃ¦lper ham. Han giver dig 180 som tak.";
 		break;
-		case 7:  fieldString = "Du ser et kloster i horisonten og går nærmere for at udforske det. Du går derfra med det du kom med.";
+		case 7:  fieldString = "Du ser et kloster i horisonten og gÃ¥r nÃ¦rmere for at udforske det. Du gÃ¥r derfra med det du kom med.";
 		break;
-		case 8:  fieldString = "Du er er gået ind i en sort hule for at udforske den, du bliver taget til fange af de indfødte og skal betale 70 for at gå derfra.";
+		case 8:  fieldString = "Du er er gÃ¥et ind i en sort hule for at udforske den, du bliver taget til fange af de indfÃ¸dte og skal betale 70 for at gÃ¥ derfra.";
 		break;
-		case 9:  fieldString = "Du bestiger bjergene og finder nogle bjerghytter, de indfødte synes om dig og giver dig 60";
+		case 9:  fieldString = "Du bestiger bjergene og finder nogle bjerghytter, de indfÃ¸dte synes om dig og giver dig 60";
 		break;
-		case 10:  fieldString = "Du ankommer til en stor mur og kan ikke passere. Vareulve står vagt i porten og vil ikke lade dig gå. Du giver dem 80, men som tak får du lov til at passere og slå igen.";
+		case 10:  fieldString = "Du ankommer til en stor mur og kan ikke passere. Vareulve stÃ¥r vagt i porten og vil ikke lade dig gÃ¥. Du giver dem 80, men som tak fÃ¥r du lov til at passere og slÃ¥ igen.";
 		break;
-		case 11: fieldString = "Du er røget ned i et hul, en mand passerer og hjælper dig, du giver ham 50 som tak.";
+		case 11: fieldString = "Du er rÃ¸get ned i et hul, en mand passerer og hjÃ¦lper dig, du giver ham 50 som tak.";
 		break;
-		case 12: fieldString = "Du ankommer til en guldmine og undersøger den. Du finder guld og sælger det for 650!";
+		case 12: fieldString = "Du ankommer til en guldmine og undersÃ¸ger den. Du finder guld og sÃ¦lger det for 650!";
 		break;	
-		default: fieldString = "Ukendt felt DESVÆRRE!";
+		default: fieldString = "Ukendt felt DESVÃ†RRE!";
 		break;
 		}
 		return fieldString;
@@ -102,7 +103,7 @@ public class Dansk implements Language{
 		return player.getName() + " Har vundet spillet med " + player.getBank() + "point!";
 	}
 	/**
-	 * Udskriver hvilke muligheder der er i hjælpemenuen
+	 * Udskriver hvilke muligheder der er i hjÃ¦lpemenuen
 	 * @return
 	 */
 	@Override
@@ -133,29 +134,29 @@ public class Dansk implements Language{
 	}
 
 	/** 
-	 * Udskriver hvordan man ændre terninger
+	 * Udskriver hvordan man Ã¦ndre terninger
 	 * @return
 	 */
 	@Override
 	public String changeDices(){
-		return "Indtast hvor mange øjne de to terninger skal have"; // Summen måtte kun gå op til 12?
+		return "Indtast hvor mange Ã¸jne de to terninger skal have"; // Summen mÃ¥tte kun gÃ¥ op til 12?
 	}
 	
 	/**
-	 * Udskriver at terningerne succesfuldt er ændret		
+	 * Udskriver at terningerne succesfuldt er Ã¦ndret		
 	 * @return
 	 */
 	@Override
 	public String printDiceChangeSucces(){
-		return "Terningerne er nu ændret!";
+		return "Terningerne er nu Ã¦ndret!";
 	}
 	
 	/**
-	 * Udskriver fejlbesked hvis terningerne ikke kunne ændres
+	 * Udskriver fejlbesked hvis terningerne ikke kunne Ã¦ndres
 	 * @return
 	 */
 	@Override
 	public String printDiceChangeNotExecuted(){
-		return "Terningerne kunne ikke ændres";
+		return "Terningerne kunne ikke Ã¦ndres";
 	}
 }

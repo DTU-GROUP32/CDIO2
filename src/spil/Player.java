@@ -5,11 +5,12 @@ public class Player{
 	private String playerName;
 	private Bank bankAccount;
 	private int id; 
-	private int nextId = 0; 
+	private static int nextId = 0; 
 
 
 	// Create a bank account for each player and set player's credit to 1000
-	public Player() {
+	public Player(String name) {
+		playerName = name;
 		this.id = nextId++;
 		bankAccount = new Bank(1000);
 
