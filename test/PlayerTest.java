@@ -1,7 +1,4 @@
-package test;
-
 import static org.junit.Assert.*;
-
 
 import org.junit.After;
 import org.junit.Before;
@@ -21,7 +18,6 @@ public class PlayerTest {
 
     }
 
-
     @Test
     public final void getBalance() {
 //		bankAccount.changeBalance(1000);
@@ -40,6 +36,4 @@ public class PlayerTest {
     public final void getId() throws Exception {
         assertEquals(player.getNextID(), 1);
     }
-
-
 }
