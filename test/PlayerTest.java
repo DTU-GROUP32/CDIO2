@@ -17,7 +17,7 @@ public class PlayerTest {
     public void setUp() throws Exception {
         bankAccount = new Bank(1000);
         player = new Player();
-        player.setPlayerName("Player");
+        player.setName("Player");
 
     }
 
@@ -27,7 +27,7 @@ public class PlayerTest {
 //		bankAccount.changeBalance(1000);
 //		assertEquals(bankAccount.getBalance(), 1000);
         int currentBalance = 1000;
-        int activePlayer = player.getBankAccount().getBalance();
+        int activePlayer = player.getBank().getBalance();
         assertEquals(currentBalance, activePlayer);
     }
 
