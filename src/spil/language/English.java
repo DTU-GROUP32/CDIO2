@@ -93,7 +93,7 @@ public class English implements Language{
 	 */
 	@Override
 	public String postMsg(Player player){
-		return "After this round " + player.getName() + " has got " + player.getBank().getBalance() + " point";
+		return "After this round " + player.getName() + " has got " + player.getBank().getBalance() + " point\n";
 	}
 
 	/**
@@ -160,5 +160,15 @@ public class English implements Language{
 	@Override
 	public String printDiceChangeNotExecuted(){
 		return "The dices couldn't be changed.";
+	}
+	/**
+	 * Udskriver spilmenu
+	 * @return
+	 */
+	@Override
+	public String printGameMenu(){
+		return "Type 1 to resume game\n" +
+				"Type 2 to change language\n" +
+				"Type 3 to end the game";
 	}
 }

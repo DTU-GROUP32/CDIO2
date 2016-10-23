@@ -11,6 +11,7 @@ public class GameBoard {
 	private Player[] players = new Player[2];
 	private Player winner = null;
 	private Field[] fields = new Field[11];
+	private boolean stopGame = false;
 
 	public GameBoard(){}
 
@@ -32,8 +33,11 @@ public class GameBoard {
 	}
 
 	public void playGame(){
-		while(winner == null){
+		while(winner == null && !stopGame){
 			for (int i=0; i<this.players.length; i++){
+				if(this.stopGame){
+					break;
+				}
 				this.playTurn(players[i]);
 			}
 		}
@@ -94,10 +98,13 @@ public class GameBoard {
 	 */
 	public void playTurn(Player player){
 		boolean extraTurn = true;
-		while (extraTurn && winner == null) {
+		while (extraTurn && winner == null && !stopGame) {
 			extraTurn = false;
 			System.out.println(language.preMsg(player));
-			input.nextLine();
+			if(this.gameMenu()){
+				this.stopGame = true;
+				break;
+			}
 			diceCup.rollDices();
 			System.out.println(language.rollResult(diceCup));
 			System.out.println(language.fieldMsg(diceCup));
@@ -108,14 +115,27 @@ public class GameBoard {
 				winner = player;
 		}
 
-		if (winner == null) 
+		if (winner == null && !stopGame){
 			System.out.println(language.postMsg(player));
-		else System.out.println(language.winnerMsg(winner));
-
+		}
+		else if(!stopGame){
+			System.out.println(language.winnerMsg(winner));
+		}
 	}
 
-	public void gameMenu(){
-
+	public boolean gameMenu() {
+		String choice = this.getInput(language.printGameMenu());
+		switch (choice) {
+			case "1":
+				return false;
+			case "2":
+				this.chooseLanguage();
+				return false;
+			case "3":
+				return true;
+			default:
+				return true;
+		}
 	}
 
 	public void postWinner(Player winner){

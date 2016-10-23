@@ -80,4 +80,9 @@ public interface Language {
 	 * @return
 	 */
 	public String printDiceChangeNotExecuted();
+	/**
+	 * Udskriver spilmenu
+	 * @return
+	 */
+	public String printGameMenu();
 }
