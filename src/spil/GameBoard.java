@@ -1,5 +1,7 @@
 package spil;
 
+import spil.language.LanguageHandler;
+
 import java.util.Scanner;
 
 public class GameBoard {
@@ -10,22 +12,35 @@ public class GameBoard {
 	private Player winner = null;
 	private Field[] fields = new Field[11];
 
-	public GameBoard(){
-		this.chooseLanguage();
-	}
+	public GameBoard(){}
 
 	public void createGame(){
+		diceCup  = new DiceCup();
 		this.createPlayers();
 		this.initFields();
 	}
 
 	public void playGame(){
-
-		input.close();
+		while(winner == null){
+			for (int i=0; i<this.players.length; i++){
+				this.playTurn(players[i]);
+			}
+		}
 	}
 
 	public void chooseLanguage(){
-		System.out.println(" ");
+		String choice = this.getInput("Type 1 for English \nTryk 2 for dansk");
+		switch (choice){
+			case "1":
+				language = new LanguageHandler("English");
+				break;
+			case "2":
+				language = new LanguageHandler("Dansk");
+				break;
+			default:
+				language = new LanguageHandler("Dansk");
+				break;
+		}
 	}
 
 	/**
@@ -33,10 +48,10 @@ public class GameBoard {
 	 */
 	public void createPlayers(){
 		for(int i = 0; i < players.length; i++){
-			System.out.printf("Indtast spillerens navn");
-			String name = input.nextLine();
+			String name = this.getInput(this.language.askForPlayerName(i+1));
 			players[i] = new Player(name);
 		}
+		System.out.println(language.printRules());
 	}
 
 	/**
@@ -54,7 +69,6 @@ public class GameBoard {
 		fields[8] = new Field(-80, true);
 		fields[9] = new Field(-50);
 		fields[10] = new Field(650);
-
 	}
 
 	
@@ -86,6 +100,7 @@ public class GameBoard {
 		if (winner == null) 
 			System.out.println(language.postMsg(player));
 		else System.out.println(language.winnerMsg(winner));
+
 	}
 
 	public void gameMenu(){
@@ -94,5 +109,13 @@ public class GameBoard {
 
 	public void postWinner(Player winner){
 		System.out.println("");
+	}
+
+
+	public String getInput(String message){
+		System.out.println(message);
+		Scanner input = new Scanner(System.in);
+		String userInput = input.nextLine();
+		return userInput;
 	}
 }
