@@ -14,6 +14,17 @@ public class GameBoard {
 
 	public GameBoard(){}
 
+	/**
+	 * Entry method for starting the program
+	 * @param args unused
+	 */
+	public static void main(String[] args){
+		GameBoard spil = new GameBoard();
+		spil.chooseLanguage();
+		spil.createGame();
+		spil.playGame();
+	}
+
 	public void createGame(){
 		diceCup  = new DiceCup();
 		this.createPlayers();
