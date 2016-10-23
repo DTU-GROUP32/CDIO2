@@ -93,7 +93,7 @@ public class Dansk implements Language{
 	 */
 	@Override
 	public String postMsg(Player player){
-		return " Efter denne runde har " + player.getName() + " nu " + player.getBank() + " point";		
+		return " Efter denne runde har " + player.getName() + " nu " + player.getBank().getBalance() + " point";
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class Dansk implements Language{
 	 */
 	@Override
 	public String winnerMsg(Player player){
-		return player.getName() + " Har vundet spillet med " + player.getBank() + "point!";
+		return player.getName() + " Har vundet spillet med " + player.getBank().getBalance() + "point!";
 	}
 	/**
 	 * Udskriver hvilke muligheder der er i hjælpemenuen

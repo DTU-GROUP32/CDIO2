@@ -93,7 +93,7 @@ public class English implements Language{
 	 */
 	@Override
 	public String postMsg(Player player){
-		return "After this round" + player.getName() + " has got " + player.getBank() + " point";
+		return "After this round" + player.getName() + " has got " + player.getBank().getBalance() + " point";
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class English implements Language{
 	 */
 	@Override
 	public String winnerMsg(Player player){
-		return player.getName() + " has won the game with " + player.getBank() + "point!";
+		return player.getName() + " has won the game with " + player.getBank().getBalance() + "point!";
 	}
 	/**
 	 * Udskriver hvilke muligheder der er i hjælpemenuen

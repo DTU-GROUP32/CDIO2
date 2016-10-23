@@ -91,7 +91,7 @@ public class GameBoard {
 			System.out.println(language.rollResult(diceCup));
 			System.out.println(language.fieldMsg(diceCup));
 			
-			extraTurn = fields[diceCup.getSum()].landOnField(player);
+			extraTurn = fields[diceCup.getSum()-2].landOnField(player);
 
 			if (player.getBank().getBalance() >= 3000)
 				winner = player;
