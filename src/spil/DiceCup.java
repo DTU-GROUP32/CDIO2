@@ -2,7 +2,7 @@ package spil;
 
 public class DiceCup {
 
-	private Dice[] dices;
+	private Dice[] dices = new Dice[2];
 	private int sum;
 
 
