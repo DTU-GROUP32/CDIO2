@@ -61,26 +61,27 @@ public class GameBoard {
 	/**
 	 * Method that receives a player object and posts a message with instructions for the player.
 	 * After the player has pressed "enter" the method will roll the dices, print the result of the roll,
-	 * enforce the landOnField method for the given field, do a win condition check, if the player
-	 * hasn't won, it will print a message with the players current score, if the player has won,
-	 * the method will post a message saying that.
+	 * enforce the landOnField method for the given field and do a win condition check. The method keeps
+	 * running that sequence until the player has no more extra turns or has won the game. If the players
+	 * turn ends and he hasn't won, the method will print a message with the players current score,
+	 * if the player has won, the method will post a message saying that.
 	 * @param Player player
 	 */
 	public void playTurn(Player player){
-		boolean extraTurn;
-		do {
+		boolean extraTurn = true;
+		while (extraTurn && winner == null) {
 			extraTurn = false;
 			System.out.println(language.preMsg(player));
 			input.nextLine();
 			diceCup.rollDices();
 			System.out.println(language.rollResult(diceCup));
 			System.out.println(language.fieldMsg(diceCup));
+			
 			extraTurn = fields[diceCup.getSum()].landOnField(player);
 
 			if (player.getBank().getBalance() >= 3000)
 				winner = player;
-
-		} while (extraTurn && winner == null);
+		}
 
 		if (winner == null) 
 			System.out.println(language.postMsg(player));
