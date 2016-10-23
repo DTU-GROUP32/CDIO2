@@ -20,7 +20,7 @@ public class Player{
 	public Player(String name) {
 		playerName = name;
 		this.ID = nextID++;
-		bankAccount = new Bank(3000);
+		bankAccount = new Bank(1000);
 	}
 	/**
 	 * Sets player names on player object
