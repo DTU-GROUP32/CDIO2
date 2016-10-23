@@ -32,7 +32,7 @@ public class Player{
 
 	/**
 	 * Return player's bank account from Bank object
-	 * @return bankAccount Bank
+	 * @return this.bankAccount Bank
 	 */
 	public Bank getBank(){
 		return this.bankAccount;
@@ -48,7 +48,7 @@ public class Player{
 
 	/**
 	 * Return player's ID
-	 * @return
+	 * @return this.ID integer
 	 */
 	public int getID(){
 		return this.ID;
@@ -56,7 +56,7 @@ public class Player{
 
 	/**
 	 * Return next ID from ID object
-	 * @return
+	 * @return this.nextID integer
 	 */
 	public int getNextID(){
 		return this.nextID;

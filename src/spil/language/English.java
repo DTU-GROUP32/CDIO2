@@ -22,7 +22,7 @@ public class English implements Language{
 	 */
 	@Override
 	public String askForPlayerName(int playerNumber){
-		return "Type player " + playerNumber + "s name";
+		return "Type player " + playerNumber + "'s name";
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class English implements Language{
 	 */
 	@Override
 	public String postMsg(Player player){
-		return "After this round" + player.getName() + " has got " + player.getBank().getBalance() + " point";
+		return "After this round " + player.getName() + " has got " + player.getBank().getBalance() + " point";
 	}
 
 	/**
