@@ -20,3 +20,7 @@ out/
 # Intellij
 .idea
 *.iml
+
+# Eclipse Files
+.classpath
+.project
