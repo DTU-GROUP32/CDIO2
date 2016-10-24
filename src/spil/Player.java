@@ -1,35 +1,41 @@
 package spil;
 
 public class Player{
+	private String playerName;
+	private Bank bankAccount;
+	private int ID;
+	private static int nextID = 0;
 
-	private String name;
-	private Bank bank;
-	private int ID; 
-	private static int nextID = 0; 
+	/**
+	 * Default constructor
+	 */
+	public Player(){
+		this("No Name");
+	}
 
-
-	// Create a bank account for each player and set player's credit to 1000
-	public Player() {
+	/**
+	 * String Constructor
+	 * @param name
+	 */
+	public Player(String name) {
+		playerName = name;
 		this.ID = nextID++;
-		bank = new Bank(1000);
-
-
+		bankAccount = new Bank(1000);
 	}
 	/**
 	 * Sets player names on player object
-	 * @param player
+	 * @param name String
 	 */
 	public void setName(String name){
-		this.name = name;
+		this.playerName = name;
 	}
-
 
 	/**
 	 * Return player's bank account from Bank object
-	 * @return
+	 * @return this.bankAccount Bank
 	 */
 	public Bank getBank(){
-		return bank;
+		return this.bankAccount;
 	}
 
 	/**
@@ -37,23 +43,22 @@ public class Player{
 	 * @return
 	 */
 	public String getName(){
-		return name;
+		return this.playerName;
 	}
 
 	/**
 	 * Return player's ID
-	 * @return
+	 * @return this.ID integer
 	 */
 	public int getID(){
-		return ID;
+		return this.ID;
 	}
 
 	/**
 	 * Return next ID from ID object
-	 * @return
+	 * @return this.nextID integer
 	 */
 	public int getNextID(){
-
-		return nextID;
+		return this.nextID;
 	}
 }
