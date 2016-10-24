@@ -1,5 +1,3 @@
-package test;
-
 import spil.Field;
 
 import static org.junit.Assert.*;
@@ -8,7 +6,7 @@ public class FieldTest {
     Field field;
     @org.junit.Before
     public void setUp() throws Exception {
-        field = new Field();
+        field = new Field(0);
     }
 
     @org.junit.After
@@ -20,5 +18,4 @@ public class FieldTest {
     public void landOnField() throws Exception {
 
     }
-
 }
