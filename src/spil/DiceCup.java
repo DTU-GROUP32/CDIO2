@@ -2,9 +2,8 @@ package spil;
 
 public class DiceCup {
 
-	private Dice[] dices;
+	private Dice[] dices = new Dice[2];
 	private int sum;
-
 
 	/**
 	 * Default constructor
@@ -13,9 +12,8 @@ public class DiceCup {
 		this(2);
 	}
 
-
 	/**
-	 * Secondary constructor
+	 * Secondary constructor, takes diceCount for constructing dicecup with custom amount of dices
 	 * @param diceCount
 	 */
 	public DiceCup(int diceCount) {
@@ -24,10 +22,9 @@ public class DiceCup {
 		}
 	}
 
-
 	/**
 	 * Gets the array of dices
-	 * @return
+	 * @return Dice dices
 	 */
 	public Dice[] getDices() {	
 		return this.dices;
@@ -42,7 +39,6 @@ public class DiceCup {
 		}
 	}
 
-
 	/**
 	 * Gets the sum of the dices
 	 * @return sum
@@ -55,12 +51,11 @@ public class DiceCup {
 		return this.sum;
 	}
 
-
 	/**
 	 * Sets the sides of the first dice to 'a' and the sides of the second dice to 'b', if the sum of 'a' and 'b' is 12, which returns true if true
-	 * @param a
-	 * @param b
-	 * @return 
+	 * @param a int
+	 * @param b int
+	 * @return boolean
 	 */
 	public boolean setDiceSides(int a, int b) {
 
@@ -74,6 +69,4 @@ public class DiceCup {
 			return false;
 
 	}
-
-
 }

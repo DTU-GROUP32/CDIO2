@@ -9,7 +9,7 @@ public class Dice {
 	 * Default constructor
 	 */
 	public Dice() {
-		
+		this(2);
 	}
 	
 	/**
@@ -17,7 +17,7 @@ public class Dice {
 	 * @param sides
 	 */
 	public Dice(int faceValue) {
-		this.faceValue = faceValue;
+		this.sides = faceValue;
 	}
 	
 	/**
@@ -52,7 +52,4 @@ public class Dice {
 	public void roll() {
 		this.faceValue = (int) ((Math.random()*sides)+1);
 	}
-	
-	
-	
 }
