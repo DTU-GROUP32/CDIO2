@@ -1,10 +1,12 @@
+package spilTest;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class DiceTest {
+public class DiceCupTest {
     @Before
     public void setUp() throws Exception {
 
@@ -16,22 +18,22 @@ public class DiceTest {
     }
 
     @Test
-    public void getSides() throws Exception {
+    public void getDices() throws Exception {
 
     }
 
     @Test
-    public void setSides() throws Exception {
+    public void rollDices() throws Exception {
 
     }
 
     @Test
-    public void getFaceValue() throws Exception {
+    public void getSum() throws Exception {
 
     }
 
     @Test
-    public void roll() throws Exception {
+    public void setDiceSides() throws Exception {
 
     }
 

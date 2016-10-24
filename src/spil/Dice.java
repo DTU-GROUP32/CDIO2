@@ -52,7 +52,4 @@ public class Dice {
 	public void roll() {
 		this.faceValue = (int) ((Math.random()*sides)+1);
 	}
-	
-	
-	
 }

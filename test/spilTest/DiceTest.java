@@ -1,10 +1,12 @@
+package spilTest;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class BankTest {
+public class DiceTest {
     @Before
     public void setUp() throws Exception {
 
@@ -16,12 +18,22 @@ public class BankTest {
     }
 
     @Test
-    public void changeBalance() throws Exception {
+    public void getSides() throws Exception {
 
     }
 
     @Test
-    public void getBalance() throws Exception {
+    public void setSides() throws Exception {
+
+    }
+
+    @Test
+    public void getFaceValue() throws Exception {
+
+    }
+
+    @Test
+    public void roll() throws Exception {
 
     }
 

@@ -1,10 +1,12 @@
+package spilTest;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class DiceCupTest {
+public class BankTest {
     @Before
     public void setUp() throws Exception {
 
@@ -16,22 +18,12 @@ public class DiceCupTest {
     }
 
     @Test
-    public void getDices() throws Exception {
+    public void changeBalance() throws Exception {
 
     }
 
     @Test
-    public void rollDices() throws Exception {
-
-    }
-
-    @Test
-    public void getSum() throws Exception {
-
-    }
-
-    @Test
-    public void setDiceSides() throws Exception {
+    public void getBalance() throws Exception {
 
     }
 

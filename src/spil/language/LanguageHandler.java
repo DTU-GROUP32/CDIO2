@@ -25,7 +25,7 @@ public class LanguageHandler {
 
 	/** 
 	 * Asks for playername 
-	 * @return
+	 * @return String
 	 */
 	public String askForPlayerName(int playerNumber){
 		return selectedLanguage.askForPlayerName(playerNumber);
@@ -34,7 +34,7 @@ public class LanguageHandler {
 
 	/** 
 	 * Tells user that the game will start shortly. 
-	 * @return
+	 * @return String
 	 */
 	public String readyToBegin(){
 		return selectedLanguage.readyToBegin();
@@ -42,7 +42,7 @@ public class LanguageHandler {
 
 	/**
 	 * Premessage at the start of players turn, tells player help option. 
-	 * @return
+	 * @return String
 	 */
 	public String preMsg(Player player){
 		return selectedLanguage.preMsg(player);
@@ -50,7 +50,7 @@ public class LanguageHandler {
 
 	/**
 	 * Displays the result of the dice roll. 
-	 * @return
+	 * @return String
 	 */
 	public String rollResult(DiceCup diceCup){
 		return selectedLanguage.rollResult(diceCup);
@@ -58,14 +58,14 @@ public class LanguageHandler {
 
 	/**
 	 * switch case til at bestemme hvad der skal printes ud fra hvad man lander på.
-	 * @return
+	 * @return String
 	 */
 	public String fieldMsg(DiceCup diceCup){
 		return selectedLanguage.fieldMsg(diceCup);
 	}
 	/**
 	 * Udskriver hvor mange point silleren har efter kast
-	 * @return
+	 * @return String
 	 */
 	public String postMsg(Player player){
 		return selectedLanguage.postMsg(player);
@@ -73,7 +73,7 @@ public class LanguageHandler {
 
 	/**
 	 * Udskriver hvem der har vundet med hvor mange point
-	 * @return
+	 * @return String
 	 */
 	public String winnerMsg(Player player){
 		return selectedLanguage.winnerMsg(player);
@@ -81,21 +81,21 @@ public class LanguageHandler {
 
 	/**
 	 * Udskriver hvilke muligheder der er i hjælpemenuen
-	 * @return
+	 * @return String
 	 */
 	public String menu(){
 		return selectedLanguage.menu();
 	}
 	/**
 	 * Udskriver reglerne 
-	 * @return
+	 * @return String
 	 */
 	public String printRules(){
 		return selectedLanguage.printRules();
 	}
 	/**
 	 * Udskriver pointstillingen
-	 * @return
+	 * @return String
 	 */
 	public String printScore(Player[] players){
 		return selectedLanguage.printScore(players);
@@ -103,28 +103,28 @@ public class LanguageHandler {
 
 	/** 
 	 * Udskriver hvordan man ændre terninger
-	 * @return
+	 * @return String
 	 */
 	public String changeDices(){
 		return selectedLanguage.changeDices();
 	}
 	/**
 	 * Udskriver at terningerne succesfuldt er ændret		
-	 * @return
+	 * @return String
 	 */
 	public String printDiceChangeSucces(){
 		return selectedLanguage.printDiceChangeSucces();
 	}
 	/**
 	 * Udskriver fejlbesked hvis terningerne ikke kunne ændres
-	 * @return
+	 * @return String
 	 */
 	public String printDiceChangeNotExecuted(){
 		return selectedLanguage.printDiceChangeNotExecuted();
 	}
 	/**
 	 * Udskriver spilmenu
-	 * @return
+	 * @return String
 	 */
 	public String printGameMenu(){
 		return selectedLanguage.printGameMenu();
