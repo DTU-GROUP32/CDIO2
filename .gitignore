@@ -24,3 +24,6 @@ out/
 # Eclipse Files
 .classpath
 .project
+
+# MagicDraw files
+*.mdzip

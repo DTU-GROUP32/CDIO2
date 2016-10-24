@@ -85,4 +85,10 @@ public interface Language {
 	 * @return
 	 */
 	public String printGameMenu();
+
+	/**
+	 * Notifies of language change
+	 * @return String
+	 */
+	public String notifyLangChange();
 }
