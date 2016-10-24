@@ -8,7 +8,7 @@ public interface Language {
 	public String welcomeMsg();
 
 	/** 
-	 * Asks for playername 
+	 * Asks for player name.
 	 * @return
 	 */
 	public String askForPlayerName(int playerNumber);
@@ -33,55 +33,55 @@ public interface Language {
 	public String rollResult(DiceCup diceCup);
 
 	/**
-	 * switch case til at bestemme hvad der skal printes ud fra hvad man lander på.
+	 * Switch case that displays the field message that was landed on.
 	 * @return
 	 */
 	public String fieldMsg(DiceCup diceCup);
 	/**
-	 * Udskriver hvor mange point silleren har efter kast
+	 * Prints how many points the player have after the throw.
 	 * @return
 	 */
 	public String postMsg(Player player);
 
 	/**
-	 * Udskriver hvem der har vundet med hvor mange point
+	 * Prints who won with how many points.
 	 * @return
 	 */
 	public String winnerMsg(Player player);
 
 	/**
-	 * Udskriver hvilke muligheder der er i hjælpemenuen
+	 * Prints the available commands in the menu.
 	 * @return
 	 */
 	public String menu();
 	/**
-	 * Udskriver reglerne 
+	 * Prints the rules of the game.
 	 * @return
 	 */
 	public String printRules();
 	/**
-	 * Udskriver pointstillingen
+	 * Prints the score. 
 	 * @return
 	 */
 	public String printScore(Player[] players);
 
 	/** 
-	 * Udskriver hvordan man ændre terninger
+	 * Prints how to change the dices.
 	 * @return
 	 */
 	public String changeDices();
 	/**
-	 * Udskriver at terningerne succesfuldt er ændret		
+	 * Prints that the dices were changed successfully.		
 	 * @return
 	 */
 	public String printDiceChangeSucces();
 	/**
-	 * Udskriver fejlbesked hvis terningerne ikke kunne ændres
+	 * Prints a error message if the dices couldn't be changed.
 	 * @return
 	 */
 	public String printDiceChangeNotExecuted();
 	/**
-	 * Udskriver spilmenu
+	 * Prints game menu.
 	 * @return
 	 */
 	public String printGameMenu();
