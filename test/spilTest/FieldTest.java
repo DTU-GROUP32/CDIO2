@@ -1,3 +1,5 @@
+package spilTest;
+
 import spil.Field;
 
 import static org.junit.Assert.*;
