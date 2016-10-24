@@ -1,6 +1,6 @@
 # CDIO2
 
-[https://dtu-group32.github.io/CDIO2/](Read Java-doc here)
+[https://dtu-group32.github.io/CDIO2/]
 
 ## Indledning
 IOOuterActive har fået endnu en opgave, og rollerne er de samme som sidst. I denne opgave skal I bl.a. vise, at I kan bruge klasser, relationer og GRASP.
