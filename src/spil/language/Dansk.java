@@ -119,7 +119,18 @@ public class Dansk implements Language{
 	 */
 	@Override
 	public String printRules(){
-		return "Regler blablabla"; // Mangler disse!
+		return "Dette spil er et terningespil mellem 2 personer. Du slår med terninger og lander på et felt fra 2-12. \nDisse felter har enten en negativ eller positiv effekt på din beholdning. Her er vist listen over felterne: \n"
+				+ "2. Tower: +250 \n"
+				+ "3. Crater: -100 \n"
+				+ "4. Palace gates: +100 \n"
+				+ "5. Cold Desert: -20 \n"
+				+ "6. Walled city: +180 \n"
+				+ "7. Monastery: 0 \n"
+				+ "8. Black cave: -70 \n"
+				+ "9. Huts in the mountain: +60 \n"
+				+ "10. The Werewall (werewolf-wall): -80, men spilleren får en ekstra tur \n"
+				+ "11. The pit: -50 \n"
+				+ "12. Goldmine: +650";
 	}
 	
 	/**
