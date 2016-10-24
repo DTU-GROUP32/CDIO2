@@ -4,9 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by Viktor on 24/10/2016.
- */
 public class DiceTest {
     @Before
     public void setUp() throws Exception {
