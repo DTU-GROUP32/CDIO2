@@ -182,7 +182,6 @@ public class GameBoard {
 	public String getInput(String message){
 		System.out.println(message);
 		Scanner input = new Scanner(System.in);
-		String userInput = input.nextLine();
-		return userInput;
+		return input.nextLine();
 	}
 }
