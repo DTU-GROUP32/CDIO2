@@ -1,3 +1,5 @@
+package spilTest;
+
 import static org.junit.Assert.*;
 
 import org.junit.After;
@@ -15,7 +17,6 @@ public class PlayerTest {
         bankAccount = new Bank(1000);
         player = new Player();
         player.setName("Player");
-
     }
 
     @Test
