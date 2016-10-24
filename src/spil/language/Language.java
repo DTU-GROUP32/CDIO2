@@ -5,6 +5,11 @@ import spil.Player;
 
 public interface Language {
 
+	/** 
+	 * Welcome message for user with commands available.
+	 * @return
+	 */
+	
 	public String welcomeMsg();
 
 	/** 

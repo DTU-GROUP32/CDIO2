@@ -19,6 +19,11 @@ public class LanguageHandler {
 		}
 	}
 
+	/** 
+	 * Welcome message for user with commands available.
+	 * @return
+	 */
+	
 	public String welcomeMsg(){
 		return selectedLanguage.welcomeMsg();
 	}
