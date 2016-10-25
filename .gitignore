@@ -24,4 +24,4 @@ out/
 
 # MagicDraw files
 *.mdzip
-*.mdzip.bak
+*.bak
