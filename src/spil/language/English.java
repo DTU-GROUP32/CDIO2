@@ -169,6 +169,7 @@ public class English implements Language{
 	public String printGameMenu(){
 		return "Type 1 to resume game\n" +
 				"Type 2 to change language\n" +
-				"Type 3 to end the game";
+				"Type 3 to end the game\n"+
+				"Type 4";
 	}
 }
