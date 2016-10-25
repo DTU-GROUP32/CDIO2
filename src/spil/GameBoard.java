@@ -14,11 +14,13 @@ public class GameBoard {
 	private boolean stopGame = false;
 
 	public GameBoard(){}
+
 	/**
 	 * Default constructor
 	 */
 	public void createGame(){
 		diceCup  = new DiceCup();
+		this.chooseLanguage();
 		this.createPlayers();
 		this.initFields();
 	}
@@ -29,7 +31,6 @@ public class GameBoard {
 	 */
 	public static void main(String[] args){
 		GameBoard spil = new GameBoard();
-		spil.chooseLanguage();
 		spil.createGame();
 		spil.playGame();
 	}
@@ -149,15 +150,6 @@ public class GameBoard {
 				return true;
 		}
 	}
-
-	/**
-	 * Prints winner message and result
-	 * @param winner Player
-	 */
-	public void postWinner(Player winner){
-		System.out.println(language.winnerMsg(winner));
-	}
-
 
 	/**
 	 * Method created to take a user-input from the scanner and print a message beforehand

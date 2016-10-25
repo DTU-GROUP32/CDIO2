@@ -11,6 +11,13 @@ public class Field {
 	 * Tells if landing on the field gives an extra turn, before the next player can roll.
 	 */
 	private boolean extraTurn;
+
+	/**
+	 * Default field constructor
+	 */
+	public Field(){
+		this(0);
+	}
 	
 	/**
 	 * Constructor for the Field class that only lets you assign the effect and has
