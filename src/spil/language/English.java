@@ -167,9 +167,17 @@ public class English implements Language{
 	 */
 	@Override
 	public String printGameMenu(){
-		return "Type 1 to resume game\n" +
+		return "Type 1 to continue the game\n" +
 				"Type 2 to change language\n" +
-				"Type 3 to end the game\n"+
-				"Type 4";
+				"Type 3 to show the score\n"+
+				"Type 4 to end the game";
+	}
+	/**
+	 * Notifies of language change
+	 * @return String
+	 */
+	@Override
+	public String notifyLangChange(){
+		return "The language is now English!";
 	}
 }

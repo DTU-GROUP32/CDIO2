@@ -60,10 +60,8 @@ public class DiceCup {
 	public boolean setDiceSides(int a, int b) {
 
 		if (a+b == 12) {
-
-			// dices[0].setSides(a);
-			// dices[1].setSides(b);
-
+			dices[0].setSides(a);
+			dices[1].setSides(b);
 			return true;
 		} else
 			return false;

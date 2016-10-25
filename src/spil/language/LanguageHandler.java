@@ -134,4 +134,12 @@ public class LanguageHandler {
 	public String printGameMenu(){
 		return selectedLanguage.printGameMenu();
 	}
+
+	/**
+	 * Notifies of language change
+	 * @return String
+	 */
+	public String notifyLangChange(){
+		return selectedLanguage.notifyLangChange();
+	}
 }
