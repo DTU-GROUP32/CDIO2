@@ -142,7 +142,7 @@ public class English implements Language{
 		StringBuilder str = new StringBuilder();
 		str.append("The score is:");
 		for (int i = 0; i < players.length; i++)
-			str.append("\n" + players[i].getName() + " has " + players[i].getBank().getBalance()) + " coins.";
+			str.append("\n" + players[i].getName() + " has " + players[i].getBank().getBalance() + " coins.");
 		return str.toString();
 	}
 
