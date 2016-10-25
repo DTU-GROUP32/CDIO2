@@ -8,7 +8,7 @@ public class Bank {
 	 * Default constructor
 	 */
 	public Bank(){
-		this(3000);
+		this(1000);
 	}
 
 	/**
