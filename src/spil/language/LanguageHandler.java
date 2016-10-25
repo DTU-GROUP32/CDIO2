@@ -19,12 +19,17 @@ public class LanguageHandler {
 		}
 	}
 
+	/** 
+	 * Welcome message for user with commands available.
+	 * @return
+	 */
+	
 	public String welcomeMsg(){
 		return selectedLanguage.welcomeMsg();
 	}
 
 	/** 
-	 * Asks for playername 
+	 * Asks for player name.
 	 * @return String
 	 */
 	public String askForPlayerName(int playerNumber){
@@ -57,14 +62,14 @@ public class LanguageHandler {
 	}
 
 	/**
-	 * switch case til at bestemme hvad der skal printes ud fra hvad man lander på.
+	 * Switch case that displays the field message that was landed on.
 	 * @return String
 	 */
 	public String fieldMsg(DiceCup diceCup){
 		return selectedLanguage.fieldMsg(diceCup);
 	}
 	/**
-	 * Udskriver hvor mange point silleren har efter kast
+	 * Prints how many points the player have after the throw.
 	 * @return String
 	 */
 	public String postMsg(Player player){
@@ -72,7 +77,7 @@ public class LanguageHandler {
 	}
 
 	/**
-	 * Udskriver hvem der har vundet med hvor mange point
+	 * Prints who won with how many points.
 	 * @return String
 	 */
 	public String winnerMsg(Player player){
@@ -80,21 +85,21 @@ public class LanguageHandler {
 	}
 
 	/**
-	 * Udskriver hvilke muligheder der er i hjælpemenuen
+	 * Prints the available commands in the menu.
 	 * @return String
 	 */
 	public String menu(){
 		return selectedLanguage.menu();
 	}
 	/**
-	 * Udskriver reglerne 
+	 * Prints the rules of the game.
 	 * @return String
 	 */
 	public String printRules(){
 		return selectedLanguage.printRules();
 	}
 	/**
-	 * Udskriver pointstillingen
+	 * Prints the score. 
 	 * @return String
 	 */
 	public String printScore(Player[] players){
@@ -102,28 +107,28 @@ public class LanguageHandler {
 	}
 
 	/** 
-	 * Udskriver hvordan man ændre terninger
+	 * Prints how to change the dices.
 	 * @return String
 	 */
 	public String changeDices(){
 		return selectedLanguage.changeDices();
 	}
 	/**
-	 * Udskriver at terningerne succesfuldt er ændret		
+	 * Prints that the dices were changed successfully.			
 	 * @return String
 	 */
 	public String printDiceChangeSucces(){
 		return selectedLanguage.printDiceChangeSucces();
 	}
 	/**
-	 * Udskriver fejlbesked hvis terningerne ikke kunne ændres
+	 * Prints a error message if the dices couldn't be changed.
 	 * @return String
 	 */
 	public String printDiceChangeNotExecuted(){
 		return selectedLanguage.printDiceChangeNotExecuted();
 	}
 	/**
-	 * Udskriver spilmenu
+	 * Prints game menu.
 	 * @return String
 	 */
 	public String printGameMenu(){
