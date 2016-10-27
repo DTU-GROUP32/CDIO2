@@ -9,32 +9,21 @@ import org.junit.Test;
 import spil.*;
 
 public class PlayerTest {
-    int id,nextId;
     Player player;
-    Bank bankAccount;
     @Before
     public void setUp() throws Exception {
-        bankAccount = new Bank(1000);
-        player = new Player();
-        player.setName("Player");
+        player = new Player("Test");
     }
 
     @Test
     public final void getBalance() {
-//		bankAccount.changeBalance(1000);
-//		assertEquals(bankAccount.getBalance(), 1000);
-        int currentBalance = 1000;
-        int activePlayer = player.getBank().getBalance();
-        assertEquals(currentBalance, activePlayer);
-    }
-
-    @Before
-    public void  setId() throws Exception {
-        id = nextId++ ;
+        assertEquals(1000, player.getBank().getBalance());
     }
 
     @Test
     public final void getId() throws Exception {
-        assertEquals(player.getNextID(), 1);
+        assertEquals(player.getID(), 0);
+        player = new Player("new player");
+        assertEquals(player.getID(), 1);
     }
 }

@@ -13,12 +13,14 @@ public class GameBoard {
 	private Field[] fields = new Field[11];
 	private boolean stopGame = false;
 
-	public GameBoard(){}
+    public GameBoard(){}
+
 	/**
 	 * Default constructor
 	 */
 	public void createGame(){
 		diceCup  = new DiceCup();
+		this.chooseLanguage();
 		this.createPlayers();
 		this.initFields();
 	}
@@ -29,7 +31,6 @@ public class GameBoard {
 	 */
 	public static void main(String[] args){
 		GameBoard spil = new GameBoard();
-		spil.chooseLanguage();
 		spil.createGame();
 		spil.playGame();
 	}
@@ -64,6 +65,7 @@ public class GameBoard {
 				language = new LanguageHandler("Dansk");
 				break;
 		}
+        System.out.println(language.notifyLangChange());
 	}
 
 	/**
@@ -109,10 +111,24 @@ public class GameBoard {
 		while (extraTurn && winner == null && !stopGame) {
 			extraTurn = false;
 			System.out.println(language.preMsg(player));
-			if(this.gameMenu()){
-				this.stopGame = true;
-				break;
-			}
+            boolean menuExit = false;
+			do {
+                switch (this.getInput("")){
+                    case "help":
+                        menuExit = this.gameMenu();
+                        if(menuExit){
+                            this.stopGame = true;
+                            break;
+                        }
+                        break;
+                    default:
+                        menuExit = true;
+                        break;
+                }
+            }while(!menuExit);
+            if(this.stopGame){
+                break;
+            }
 			diceCup.rollDices();
 			System.out.println(language.rollResult(diceCup));
 			System.out.println(language.fieldMsg(diceCup));
@@ -138,26 +154,25 @@ public class GameBoard {
 	public boolean gameMenu() {
 		String choice = this.getInput(language.printGameMenu());
 		switch (choice) {
+            // Continue Game
 			case "1":
 				return false;
+            // Change Language
 			case "2":
 				this.chooseLanguage();
 				return false;
-			case "3":
+            // Show Score
+            case "3":
+                System.out.println(language.printScore(this.players));
+                return false;
+            // End Game
+            case "4":
 				return true;
+            // Default
 			default:
-				return true;
+				return false;
 		}
 	}
-
-	/**
-	 * Prints winner message and result
-	 * @param winner Player
-	 */
-	public void postWinner(Player winner){
-		System.out.println(language.winnerMsg(winner));
-	}
-
 
 	/**
 	 * Method created to take a user-input from the scanner and print a message beforehand
@@ -167,7 +182,6 @@ public class GameBoard {
 	public String getInput(String message){
 		System.out.println(message);
 		Scanner input = new Scanner(System.in);
-		String userInput = input.nextLine();
-		return userInput;
+		return input.nextLine();
 	}
 }

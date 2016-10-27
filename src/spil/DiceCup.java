@@ -54,16 +54,14 @@ public class DiceCup {
 	/**
 	 * Sets the sides of the first dice to 'a' and the sides of the second dice to 'b', if the sum of 'a' and 'b' is 12, which returns true if true
 	 * @param a int
-	 * @param b int
-	 * @return boolean
+	 * @param b
+	 * @return
 	 */
 	public boolean setDiceSides(int a, int b) {
 
 		if (a+b == 12) {
-
-			// dices[0].setSides(a);
-			// dices[1].setSides(b);
-
+			dices[0].setSides(a);
+			dices[1].setSides(b);
 			return true;
 		} else
 			return false;
