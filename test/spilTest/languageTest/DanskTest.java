@@ -9,9 +9,6 @@ import spil.language.Dansk;
 import spil.DiceCup;
 import static org.junit.Assert.*;
 
-/**
- * Created by Viktor on 24/10/2016.
- */
 public class DanskTest {
 	Dansk language; 
 	Player[] players;

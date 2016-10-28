@@ -179,8 +179,17 @@ public class Dansk implements Language{
 	 */
 	@Override
 	public String printGameMenu(){
-		return "Tast 1 for at fortsætte tur\n" +
+		return "Tast 1 for at fortsætte spillet\n" +
 				"Tast 2 for at ændre sprog\n" +
-				"Tast 3 for at afslutte spillet";
+				"Tast 3 for at vise scoren\n"+
+				"Tast 4 for at afslutte spillet";
+	}
+	/**
+	 * Notifies of language change
+	 * @return String
+	 */
+	@Override
+	public String notifyLangChange(){
+		return "Sproget er nu sat til dansk!";
 	}
 }

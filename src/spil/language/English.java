@@ -31,7 +31,7 @@ public class English implements Language{
 	 */
 	@Override
 	public String readyToBegin(){
-		return "The game is starting. The player who reaches 3000 points is the winner. + '\n' + You can type 'help' when it's your turn, to open a help menu. "; // Skal bruger trykke på noget for at starte?
+		return "The game is starting. The player who reaches 3000 coins is the winner. + '\n' + You can type 'help' when it's your turn, to open a help menu. "; // Skal bruger trykke på noget for at starte?
 	}
 
 	/**
@@ -52,60 +52,60 @@ public class English implements Language{
 	}
 
 	/**
-	 * switch case til at bestemme hvad der skal printes ud fra hvad man lander på.
+	 * Switch case that displays the field message that was landed on.
 	 * @return
 	 */
 	@Override
 	public String fieldMsg(DiceCup diceCup){
 		String fieldString;
 		switch (diceCup.getSum()) {
-			case 2:  fieldString = "You've climbed to the top of the tower and found 250!";
-				break;
-			case 3:  fieldString = "You've fallen into the crater, it'll cost you 100 to get back up.";
-				break;
-			case 4:  fieldString = "You've arrived at the palace gates, the guards greets you with 100 when you pass.";
-				break;
-			case 5:  fieldString = "You've gotten lost in the cold dessert, you find a guy who sells you warm clothes costs you 20.";
-				break;
-			case 6:  fieldString = "You've arrived at the walled city. A man needs your help, after you've helped him he gave you 180!";
-				break;
-			case 7:  fieldString = "You've seen a monastery, you didn't find anything there.";
-				break;
-			case 8:  fieldString = "You've walked into a black cave and taken captive, it costs you 70 to walk free.";
-				break;
-			case 9:  fieldString = "You've found some huts in the mountains, the people that live there likes you and give you 60!";
-				break;
-			case 10: fieldString = "You've arrived at the werewall. The werewolf doesn't want to let you go, you give them 80, as thanks they let you walk free and roll the dice again.";
-				break;
-			case 11: fieldString = "You've fallen into the pit, a friendly man helps you back up. You give him 50 as thanks.";
-				break;
-			case 12: fieldString = "You've arrived at the goldmine. You find gold in there, you sell it for 650!";
-				break;
-			default: fieldString = "Unknown field.";
-				break;
+		case 2:  fieldString = "You've climbed to the top of the tower and found 250 coins!";
+		break;
+		case 3:  fieldString = "You've fallen into the crater, it'll cost you 100 coins to get back up.";
+		break;
+		case 4:  fieldString = "You've arrived at the palace gates, the guards greets you with 100 coins when you pass.";
+		break;
+		case 5:  fieldString = "You've gotten lost in the cold dessert, you find a guy who sells you warm clothes costs you 20 coins.";
+		break;
+		case 6:  fieldString = "You've arrived at the walled city. A man needs your help, after you've helped him he gave you 180 coins!";
+		break;
+		case 7:  fieldString = "You've seen a monastery, you didn't find anything there.";
+		break;
+		case 8:  fieldString = "You've walked into a black cave and taken captive, it costs you 70 coins to walk free.";
+		break;
+		case 9:  fieldString = "You've found some huts in the mountains, the people that live there likes you and give you 60 coins!";
+		break;
+		case 10: fieldString = "You've arrived at the werewall. The werewolf doesn't want to let you go, you give them 80 coins, as thanks they let you walk free and roll the dice again.";
+		break;
+		case 11: fieldString = "You've fallen into the pit, a friendly man helps you back up. You give him 50 coins as thanks.";
+		break;
+		case 12: fieldString = "You've arrived at the goldmine. You find gold in there, you sell it for 650 coins!";
+		break;
+		default: fieldString = "Unknown field.";
+		break;
 		}
 		return fieldString;
 	}
 
 	/**
-	 * Udskriver hvor mange point silleren har efter kast
+	 * Prints how many points the player have after the throw.
 	 * @return
 	 */
 	@Override
 	public String postMsg(Player player){
-		return "After this round " + player.getName() + " has got " + player.getBank().getBalance() + " point\n";
+		return "After this round " + player.getName() + " has got " + player.getBank().getBalance() + " coins\n";
 	}
 
 	/**
-	 * Udskriver hvem der har vundet med hvor mange point
+	 * Prints who won with how many points.
 	 * @return
 	 */
 	@Override
 	public String winnerMsg(Player player){
-		return player.getName() + " has won the game with " + player.getBank().getBalance() + "point!";
+		return player.getName() + " has won the game with " + player.getBank().getBalance() + "coins!";
 	}
 	/**
-	 * Udskriver hvilke muligheder der er i hjælpemenuen
+	 * Prints the available commands in the menu.
 	 * @return
 	 */
 	@Override
@@ -114,16 +114,27 @@ public class English implements Language{
 	}
 
 	/**
-	 * Udskriver reglerne
+	 * Prints the rules of the game.
 	 * @return
 	 */
 	@Override
 	public String printRules(){
-		return "Rules.........???"; // Mangler disse!
+		return "This is a dice game with 2 players. You roll the dices and land on a field inbetween 2 and 12. \n All fields have a different effect on your score, either positive or negative. Here's a list of all the fields: \n"
+				+ "2. Tower: +250 coins \n"
+				+ "3. Crater: -100 coins \n"
+				+ "4. Palace gates: +100 coins \n"
+				+ "5. Cold Desert: -20 coins \n"
+				+ "6. Walled city: +180 coins \n"
+				+ "7. Monastery: 0 coins \n"
+				+ "8. Black cave: -70 coins \n"
+				+ "9. Huts in the mountain: +60 coins \n"
+				+ "10. The Werewall (werewolf-wall): -80 coins, The player get an extra throw aswell \n"
+				+ "11. The pit: -50 coins \n"
+				+ "12. Goldmine: +650 coins";
 	}
 
 	/**
-	 * Udskriver pointstillingen
+	 * Prints the score. 
 	 * @return
 	 */
 	@Override
@@ -131,12 +142,12 @@ public class English implements Language{
 		StringBuilder str = new StringBuilder();
 		str.append("The score is:");
 		for (int i = 0; i < players.length; i++)
-			str.append("\n" + players[i].getName() + " has " + players[i].getBank().getBalance());
+			str.append("\n" + players[i].getName() + " has " + players[i].getBank().getBalance() + " coins.");
 		return str.toString();
 	}
 
-	/**
-	 * Udskriver hvordan man ændre terninger
+	/** 
+	 * Prints how to change the dices.
 	 * @return
 	 */
 	@Override
@@ -145,7 +156,7 @@ public class English implements Language{
 	}
 
 	/**
-	 * Udskriver at terningerne succesfuldt er ændret
+	 * Prints that the dices were changed successfully.
 	 * @return
 	 */
 	@Override
@@ -154,7 +165,7 @@ public class English implements Language{
 	}
 
 	/**
-	 * Udskriver fejlbesked hvis terningerne ikke kunne ændres
+	 * Prints a error message if the dices couldn't be changed.
 	 * @return
 	 */
 	@Override
@@ -162,14 +173,22 @@ public class English implements Language{
 		return "The dices couldn't be changed.";
 	}
 	/**
-	 * Udskriver spilmenu
+	 * Prints game menu.
 	 * @return
 	 */
 	@Override
 	public String printGameMenu(){
-		return "Type 1 to resume game\n" +
+		return "Type 1 to continue the game\n" +
 				"Type 2 to change language\n" +
-				"Type 3 to end the game\n"+
-				"Type 4";
+				"Type 3 to show the score\n"+
+				"Type 4 to end the game";
+	}
+	/**
+	 * Notifies of language change
+	 * @return String
+	 */
+	@Override
+	public String notifyLangChange(){
+		return "The language is now English!";
 	}
 }
