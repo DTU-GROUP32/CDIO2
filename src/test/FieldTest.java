@@ -1,5 +1,9 @@
 package test;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.Assert;
 import spil.Player;
 import spil.Field;
 
@@ -87,7 +91,7 @@ public class FieldTest {
 	} // Not as expected
 	
 	
-	@Test // Tests landOnField() method with max value
+	@Test // Tests landOnField() method with min value
 	public void testLandOnFieldMinEffect() {
 
 		Field field = new Field(Integer.MIN_VALUE);

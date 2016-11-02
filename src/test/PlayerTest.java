@@ -2,9 +2,9 @@ package test;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.Assert;
 
 import spil.*;
 
@@ -16,8 +16,14 @@ public class PlayerTest {
     }
 
     @Test
-    public final void getBalance() {
-        Assert.assertEquals(1000, player.getBank().getBalance());
+    public final void getName() throws Exception {
+        Assert.assertEquals(player.getName(), "Test");
+    }
+
+    @Test
+    public final void setName() throws Exception {
+        player.setName("Test2");
+        Assert.assertEquals("Test2", player.getName());
     }
 
     @Test
@@ -25,5 +31,11 @@ public class PlayerTest {
         Assert.assertEquals(player.getID(), 0);
         player = new Player("new player");
         Assert.assertEquals(player.getID(), 1);
+    }
+    
+    @Test
+    public final void getBank() throws Exception {
+        Bank playerBank = player.getBank();
+        Assert.assertEquals(1000, playerBank.getBalance());
     }
 }

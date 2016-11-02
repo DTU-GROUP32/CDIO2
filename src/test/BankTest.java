@@ -3,6 +3,7 @@ package test;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.Assert;
 import spil.Bank;
 
 import static org.junit.Assert.*;
