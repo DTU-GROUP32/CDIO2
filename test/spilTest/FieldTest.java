@@ -1,10 +1,9 @@
-package test;
+package spilTest;
 
-import spil.Field;
 import spil.Player;
+import spil.Field;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
 
 public class FieldTest {
 	Player player;

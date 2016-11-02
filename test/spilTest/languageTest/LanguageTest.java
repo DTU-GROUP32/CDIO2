@@ -1,4 +1,4 @@
-package test.languageTest;
+package spilTest.languageTest;
 
 import org.junit.After;
 import org.junit.Before;
@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class LanguageHandlerTest {
+public class LanguageTest {
     @Before
     public void setUp() throws Exception {
 
@@ -14,11 +14,6 @@ public class LanguageHandlerTest {
 
     @After
     public void tearDown() throws Exception {
-
-    }
-
-    @Test
-    public void setLanguage() throws Exception {
 
     }
 

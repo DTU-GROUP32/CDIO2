@@ -1,4 +1,4 @@
-package test;
+package spilTest;
 
 import org.junit.After;
 import org.junit.Before;
@@ -6,7 +6,6 @@ import org.junit.Test;
 import spil.Bank;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
 
 public class BankTest {
     private Bank bank;

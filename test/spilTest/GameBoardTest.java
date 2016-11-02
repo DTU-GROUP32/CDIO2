@@ -1,9 +1,8 @@
-package test;
+package spilTest;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import spil.GameBoard;
 
 import static org.junit.Assert.*;
