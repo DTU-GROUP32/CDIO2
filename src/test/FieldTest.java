@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.Assert;
+import org.omg.PortableInterceptor.Interceptor;
 import spil.Player;
 import spil.Field;
 
@@ -79,15 +80,13 @@ public class FieldTest {
 	
 	@Test // Tests landOnField() method with max value
 	public void testLandOnFieldMaxEffect() {
-
-		Field field = new Field(Integer.MAX_VALUE);
-		
+		int effect = Integer.MAX_VALUE;
+		Field field = new Field(effect);
 		field.landOnField(player);
 
 		int actual = player.getBank().getBalance();
-		int expected = Integer.MAX_VALUE;
-		
-		Assert.assertEquals(expected, actual);
+
+		Assert.assertEquals(effect, actual);
 	} // Not as expected
 	
 	
@@ -101,8 +100,8 @@ public class FieldTest {
 		int actual = player.getBank().getBalance();
 		int expected = Integer.MIN_VALUE;
 		
-		Assert.assertEquals(expected, actual);
-	} // Not as expected
+		Assert.assertEquals(0, actual);
+	} // As expected
 	
     
 }

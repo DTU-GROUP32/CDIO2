@@ -3,6 +3,7 @@ package test;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.Assert;
 
@@ -13,6 +14,12 @@ public class PlayerTest {
     @Before
     public void setUp() throws Exception {
         player = new Player("Test");
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        player.setNextID(0);
+        player = null;
     }
 
     @Test
