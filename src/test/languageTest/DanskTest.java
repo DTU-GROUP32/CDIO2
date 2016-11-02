@@ -1,4 +1,4 @@
-package spilTest.languageTest;
+package test.languageTest;
 
 import org.junit.After;
 import org.junit.Before;
