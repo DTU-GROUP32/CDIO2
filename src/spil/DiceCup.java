@@ -2,14 +2,14 @@ package spil;
 
 public class DiceCup {
 
-	private Dice[] dices = new Dice[2];
-	private int sum;
+	private Dice[] dices;
 
 	/**
 	 * Default constructor
 	 */
 	public DiceCup() {
 		this(2);
+
 	}
 
 	/**
@@ -17,9 +17,11 @@ public class DiceCup {
 	 * @param diceCount
 	 */
 	public DiceCup(int diceCount) {
+		dices = new Dice[diceCount];
 		for(int i = 0; i < diceCount; i++) {
 			this.dices[i] = new Dice();
 		}
+		
 	}
 
 	/**
@@ -44,11 +46,11 @@ public class DiceCup {
 	 * @return sum
 	 */
 	public int getSum() {
-		this.sum = 0;
+		int sum = 0;
 		for(int i = 0; i < dices.length; i++) {
-			this.sum += dices[i].getFaceValue();
+			sum += dices[i].getFaceValue();
 		}
-		return this.sum;
+		return sum;
 	}
 
 	/**
