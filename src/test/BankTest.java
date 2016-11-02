@@ -1,4 +1,4 @@
-package spilTest;
+package test;
 
 import org.junit.After;
 import org.junit.Before;
@@ -22,16 +22,16 @@ public class BankTest {
     @Test
     public void changeBalance() throws Exception {
         bank.changeBalance(-100);
-        assertEquals(bank.getBalance(), 900);
+        Assert.assertEquals(bank.getBalance(), 900);
         bank.changeBalance(100);
-        assertEquals(bank.getBalance(), 1000);
+        Assert.assertEquals(bank.getBalance(), 1000);
         bank.changeBalance(-1001);
-        assertEquals(bank.getBalance(), 0);
+        Assert.assertEquals(bank.getBalance(), 0);
     }
 
     @Test
     public void getBalance() throws Exception {
-        assertEquals(bank.getBalance(), 1000);
+        Assert.assertEquals(bank.getBalance(), 1000);
     }
 
 }

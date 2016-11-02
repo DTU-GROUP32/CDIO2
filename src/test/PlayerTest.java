@@ -1,4 +1,4 @@
-package spilTest;
+package test;
 
 import static org.junit.Assert.*;
 
@@ -17,13 +17,13 @@ public class PlayerTest {
 
     @Test
     public final void getBalance() {
-        assertEquals(1000, player.getBank().getBalance());
+        Assert.assertEquals(1000, player.getBank().getBalance());
     }
 
     @Test
     public final void getId() throws Exception {
-        assertEquals(player.getID(), 0);
+        Assert.assertEquals(player.getID(), 0);
         player = new Player("new player");
-        assertEquals(player.getID(), 1);
+        Assert.assertEquals(player.getID(), 1);
     }
 }

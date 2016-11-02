@@ -1,4 +1,4 @@
-package spilTest;
+package test;
 
 import spil.Player;
 import spil.Field;
@@ -28,7 +28,7 @@ public class FieldTest {
 		int actual = player.getBank().getBalance();
 		int expected = 1300;
 		
-		assertEquals(expected, actual);
+		Assert.assertEquals(expected, actual);
 	} // As expected
 
 	
@@ -41,7 +41,7 @@ public class FieldTest {
 		int actual = player.getBank().getBalance();
 		int expected = 700;
 		
-		assertEquals(expected, actual);
+		Assert.assertEquals(expected, actual);
 	} // As expected
 	
 	
@@ -49,7 +49,7 @@ public class FieldTest {
 	public void testLandOnFieldReturnFalse() {
 		Field field = new Field(-300);
 		
-		assertEquals(false, field.landOnField(player));
+		Assert.assertEquals(false, field.landOnField(player));
 	} // As expected
 	
 	
@@ -57,7 +57,7 @@ public class FieldTest {
 	public void testLandOnFieldReturnFalse2() {
 		Field field = new Field(-300, false);
 		
-		assertEquals(false, field.landOnField(player));
+		Assert.assertEquals(false, field.landOnField(player));
 	} // As expected
 	
 	
@@ -65,7 +65,7 @@ public class FieldTest {
 	public void testLandOnFieldReturnTrue() {
 		Field field = new Field(-300, true);
 		
-		assertEquals(true, field.landOnField(player));
+		Assert.assertEquals(true, field.landOnField(player));
 	} // As expected
 	
 	
@@ -83,7 +83,7 @@ public class FieldTest {
 		int actual = player.getBank().getBalance();
 		int expected = Integer.MAX_VALUE;
 		
-		assertEquals(expected, actual);
+		Assert.assertEquals(expected, actual);
 	} // Not as expected
 	
 	
@@ -97,7 +97,7 @@ public class FieldTest {
 		int actual = player.getBank().getBalance();
 		int expected = Integer.MIN_VALUE;
 		
-		assertEquals(expected, actual);
+		Assert.assertEquals(expected, actual);
 	} // Not as expected
 	
     
