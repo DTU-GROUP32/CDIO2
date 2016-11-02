@@ -122,6 +122,7 @@ public class DiceTest {
 				break;
 			}
 		}
+		
 		for(int i = 0; i<actual.length; i++){
 			chiSquare += Math.pow(actual[i]-expected, 2)/expected;
 		}
