@@ -1,13 +1,14 @@
-package spilTest.languageTest;
+package test.languageTest;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
+import spil.DiceCup;
 import spil.Player;
 import spil.language.Dansk;
-import spil.DiceCup;
+
 import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class DanskTest {
 	Dansk language; 

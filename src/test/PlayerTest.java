@@ -1,12 +1,11 @@
-package spilTest;
+package test;
 
-import static org.junit.Assert.*;
-
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import spil.Player;
 
-import spil.*;
+import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class PlayerTest {
     Player player;
