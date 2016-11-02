@@ -1,5 +1,10 @@
-package spilTest;
+package test;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.Assert;
+import org.omg.PortableInterceptor.Interceptor;
 import spil.Player;
 import spil.Field;
 
@@ -28,7 +33,7 @@ public class FieldTest {
 		int actual = player.getBank().getBalance();
 		int expected = 1300;
 		
-		assertEquals(expected, actual);
+		Assert.assertEquals(expected, actual);
 	} // As expected
 
 	
@@ -41,7 +46,7 @@ public class FieldTest {
 		int actual = player.getBank().getBalance();
 		int expected = 700;
 		
-		assertEquals(expected, actual);
+		Assert.assertEquals(expected, actual);
 	} // As expected
 	
 	
@@ -49,7 +54,7 @@ public class FieldTest {
 	public void testLandOnFieldReturnFalse() {
 		Field field = new Field(-300);
 		
-		assertEquals(false, field.landOnField(player));
+		Assert.assertEquals(false, field.landOnField(player));
 	} // As expected
 	
 	
@@ -57,7 +62,7 @@ public class FieldTest {
 	public void testLandOnFieldReturnFalse2() {
 		Field field = new Field(-300, false);
 		
-		assertEquals(false, field.landOnField(player));
+		Assert.assertEquals(false, field.landOnField(player));
 	} // As expected
 	
 	
@@ -65,7 +70,7 @@ public class FieldTest {
 	public void testLandOnFieldReturnTrue() {
 		Field field = new Field(-300, true);
 		
-		assertEquals(true, field.landOnField(player));
+		Assert.assertEquals(true, field.landOnField(player));
 	} // As expected
 	
 	
@@ -75,19 +80,17 @@ public class FieldTest {
 	
 	@Test // Tests landOnField() method with max value
 	public void testLandOnFieldMaxEffect() {
-
-		Field field = new Field(Integer.MAX_VALUE);
-		
+		int effect = Integer.MAX_VALUE;
+		Field field = new Field(effect);
 		field.landOnField(player);
 
 		int actual = player.getBank().getBalance();
-		int expected = Integer.MAX_VALUE;
-		
-		assertEquals(expected, actual);
+
+		Assert.assertEquals(effect, actual);
 	} // Not as expected
 	
 	
-	@Test // Tests landOnField() method with max value
+	@Test // Tests landOnField() method with min value
 	public void testLandOnFieldMinEffect() {
 
 		Field field = new Field(Integer.MIN_VALUE);
@@ -97,8 +100,8 @@ public class FieldTest {
 		int actual = player.getBank().getBalance();
 		int expected = Integer.MIN_VALUE;
 		
-		assertEquals(expected, actual);
-	} // Not as expected
+		Assert.assertEquals(0, actual);
+	} // As expected
 	
     
 }

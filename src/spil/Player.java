@@ -61,4 +61,11 @@ public class Player{
 	public int getNextID(){
 		return this.nextID;
 	}
+
+	/**
+	 * Method created for testability purposes
+	 */
+	public void setNextID(int ID){
+		nextID = ID;
+	}
 }
