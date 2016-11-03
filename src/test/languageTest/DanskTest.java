@@ -153,13 +153,4 @@ public class DanskTest {
 	public void printDiceChangeNotExecuted() throws Exception {
 	assertTrue(language.printDiceChangeNotExecuted() instanceof String);
 	}
-
-	/**
-	 * Tests if printGameMenu is string
-	 * @throws Exception
-	 */
-	@Test
-	public void printGameMenu() throws Exception {
-		assertTrue(language.printGameMenu() instanceof String);
-	}
 }

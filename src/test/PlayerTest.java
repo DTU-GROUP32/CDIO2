@@ -18,7 +18,6 @@ public class PlayerTest {
 
     @After
     public void tearDown() throws Exception {
-        player.setNextID(0);
         player = null;
     }
 

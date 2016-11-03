@@ -31,7 +31,8 @@ public class English implements Language{
 	 */
 	@Override
 	public String readyToBegin(){
-		return "The game is starting. The player who reaches 3000 coins is the winner. + '\n' + You can type 'help' when it's your turn, to open a help menu. "; // Skal bruger trykke på noget for at starte?
+		return "\nThe game is starting. The player who reaches 3000 coins first is the winner.\nYou can type 'help' at any time"
+				+ " to open a help menu. "; // Skal bruger trykke på noget for at starte?
 	}
 
 	/**
@@ -39,7 +40,7 @@ public class English implements Language{
 	 * @return
 	 */
 	public String preMsg(Player player){
-		return "It's " + player.getName() + "s turn"; // getbank.getbalance
+		return "\nIt's " + player.getName() + "s turn, press 'enter' to roll the dices!"; // getbank.getbalance
 	}
 
 	/**
@@ -93,7 +94,7 @@ public class English implements Language{
 	 */
 	@Override
 	public String postMsg(Player player){
-		return "After this round " + player.getName() + " has got " + player.getBank().getBalance() + " coins\n";
+		return "After this round " + player.getName() + " has got " + player.getBank().getBalance() + " coins";
 	}
 
 	/**
@@ -110,7 +111,11 @@ public class English implements Language{
 	 */
 	@Override
 	public String menu(){
-		return "Type 1 for rules" + '\n' + "Type 2 for scoreboard" + '\n' + "Type 3 to swap dices" + '\n' + "Type 4 to end the game";
+		return "Type 1 to change sides on dice.\n" +
+				"Type 2 to change language.\n" +
+				"Type 3 to show the score.\n"+
+				"Type 4 to end the game.\n" +
+				"Type 5 to continue the game.";
 	}
 
 	/**
@@ -119,7 +124,7 @@ public class English implements Language{
 	 */
 	@Override
 	public String printRules(){
-		return "This is a dice game with 2 players. You roll the dices and land on a field inbetween 2 and 12. \n All fields have a different effect on your score, either positive or negative. Here's a list of all the fields: \n"
+		return "This is a dice game with 2 players. You roll the dices and land on a field inbetween 2 and 12. \nAll fields have a different effect on your score, either positive or negative. Here's a list of all the fields: \n"
 				+ "2. Tower: +250 coins \n"
 				+ "3. Crater: -100 coins \n"
 				+ "4. Palace gates: +100 coins \n"
@@ -152,7 +157,7 @@ public class English implements Language{
 	 */
 	@Override
 	public String changeDices(){
-		return "Type how many sides the two dices should have"; // Summen måtte kun gå op til 12?
+		return "Type how many sides the two dices should have, on the format \"x,y\" - the sum has to be 12"; // Summen måtte kun gå op til 12?
 	}
 
 	/**
@@ -172,17 +177,7 @@ public class English implements Language{
 	public String printDiceChangeNotExecuted(){
 		return "The dices couldn't be changed.";
 	}
-	/**
-	 * Prints game menu.
-	 * @return
-	 */
-	@Override
-	public String printGameMenu(){
-		return "Type 1 to continue the game\n" +
-				"Type 2 to change language\n" +
-				"Type 3 to show the score\n"+
-				"Type 4 to end the game";
-	}
+
 	/**
 	 * Notifies of language change
 	 * @return String

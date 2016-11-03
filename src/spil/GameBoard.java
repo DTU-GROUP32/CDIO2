@@ -11,9 +11,8 @@ public class GameBoard {
 	private Player[] players = new Player[2];
 	private Player winner = null;
 	private Field[] fields = new Field[11];
-	private boolean stopGame = false;
 
-    public GameBoard(){}
+	public GameBoard(){}
 
 	/**
 	 * Default constructor
@@ -35,18 +34,18 @@ public class GameBoard {
 		spil.playGame();
 	}
 
-	/**
+	/**1
 	 * Method to start playing the game
 	 */
 	public void playGame(){
-		while(winner == null && !stopGame){
+		System.out.println(language.readyToBegin());
+		while (winner == null) {
 			for (int i=0; i<this.players.length; i++){
-				if(this.stopGame){
-					break;
-				}
-				this.playTurn(players[i]);
+				if(winner == null)
+					this.playTurn(players[i]);
 			}
 		}
+		input.close();
 	}
 
 	/**
@@ -55,17 +54,17 @@ public class GameBoard {
 	public void chooseLanguage(){
 		String choice = this.getInput("Type 1 for English \nTryk 2 for dansk");
 		switch (choice){
-			case "1":
-				language = new LanguageHandler("English");
-				break;
-			case "2":
-				language = new LanguageHandler("Dansk");
-				break;
-			default:
-				language = new LanguageHandler("Dansk");
-				break;
+		case "1":
+			language = new LanguageHandler("English");
+			break;
+		case "2":
+			language = new LanguageHandler("Dansk");
+			break;
+		default:
+			language = new LanguageHandler("Dansk");
+			break;
 		}
-        System.out.println(language.notifyLangChange());
+		System.out.println(language.notifyLangChange());
 	}
 
 	/**
@@ -96,7 +95,7 @@ public class GameBoard {
 		fields[10] = new Field(650);
 	}
 
-	
+
 	/**
 	 * Method that receives a player object and posts a message with instructions for the player.
 	 * After the player has pressed "enter" the method will roll the dices, print the result of the roll,
@@ -108,69 +107,59 @@ public class GameBoard {
 	 */
 	public void playTurn(Player player){
 		boolean extraTurn = true;
-		while (extraTurn && winner == null && !stopGame) {
+		while (extraTurn && winner == null) {
+			String response = getInput(language.preMsg(player));
+			if (response.equals("help")) {
+				this.gameMenu();
+				continue;
+			}
 			extraTurn = false;
-			System.out.println(language.preMsg(player));
-            boolean menuExit = false;
-			do {
-                switch (this.getInput("")){
-                    case "help":
-                        menuExit = this.gameMenu();
-                        if(menuExit){
-                            this.stopGame = true;
-                            break;
-                        }
-                        break;
-                    default:
-                        menuExit = true;
-                        break;
-                }
-            }while(!menuExit);
-            if(this.stopGame){
-                break;
-            }
-			diceCup.rollDices();
-			System.out.println(language.rollResult(diceCup));
-			System.out.println(language.fieldMsg(diceCup));
-			
-			extraTurn = fields[diceCup.getSum()-2].landOnField(player);
+			if (winner == null) {
+				diceCup.rollDices();
+				System.out.println(language.rollResult(diceCup));
+				System.out.println(language.fieldMsg(diceCup));
 
-			if (player.getBank().getBalance() >= 3000)
-				winner = player;
+				extraTurn = fields[diceCup.getSum()-2].landOnField(player);
+
+				if (player.getBank().getBalance() >= 3000)
+					winner = player;
+			}
 		}
-
-		if (winner == null && !stopGame){
+		if (winner == null){
 			System.out.println(language.postMsg(player));
-		}
-		else if(!stopGame){
-			System.out.println(language.winnerMsg(winner));
-		}
+		} else System.out.println(language.winnerMsg(winner));
 	}
 
 	/**
 	 * Gamemenu shown before the start of each turn. Lets player end game, continue or switch language
 	 * @return
 	 */
-	public boolean gameMenu() {
-		String choice = this.getInput(language.printGameMenu());
+	public void gameMenu() {
+		String choice = this.getInput(language.menu());
 		switch (choice) {
-            // Continue Game
-			case "1":
-				return false;
-            // Change Language
-			case "2":
-				this.chooseLanguage();
-				return false;
-            // Show Score
-            case "3":
-                System.out.println(language.printScore(this.players));
-                return false;
-            // End Game
-            case "4":
-				return true;
-            // Default
-			default:
-				return false;
+		// Change dice sides
+		case "1":
+			String subchoice = this.getInput(language.changeDices());
+			if(diceCup.setDiceSides(Character.getNumericValue(subchoice.charAt(0)), Character.getNumericValue(subchoice.charAt(2))))
+				System.out.println(language.printDiceChangeSucces());
+			else System.out.println(language.printDiceChangeNotExecuted());
+			break;
+			// Change Language
+		case "2":
+			this.chooseLanguage();
+			break;
+			// Show Score
+		case "3":
+			System.out.println(language.printScore(this.players));
+			break;
+			// End Game
+		case "4":
+			System.exit(1);
+			// Continue game
+		case "5":
+			break;
+			// Default
+		default: break;
 		}
 	}
 
@@ -181,7 +170,6 @@ public class GameBoard {
 	 */
 	public String getInput(String message){
 		System.out.println(message);
-		Scanner input = new Scanner(System.in);
 		return input.nextLine();
 	}
 }
