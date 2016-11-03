@@ -108,10 +108,12 @@ public class GameBoard {
 	public void playTurn(Player player){
 		boolean extraTurn = true;
 		while (extraTurn && winner == null) {
-			extraTurn = false;
 			String response = getInput(language.preMsg(player));
-			if (response == "help")
+			if (response.equals("help")) {
 				this.gameMenu();
+				continue;
+			}
+			extraTurn = false;
 			if (winner == null) {
 				diceCup.rollDices();
 				System.out.println(language.rollResult(diceCup));
@@ -138,7 +140,7 @@ public class GameBoard {
 		// Change dice sides
 		case "1":
 			String subchoice = this.getInput(language.changeDices());
-			if(diceCup.setDiceSides(subchoice.charAt(0), subchoice.charAt(2)))
+			if(diceCup.setDiceSides(Character.getNumericValue(subchoice.charAt(0)), Character.getNumericValue(subchoice.charAt(2))))
 				System.out.println(language.printDiceChangeSucces());
 			else System.out.println(language.printDiceChangeNotExecuted());
 			break;

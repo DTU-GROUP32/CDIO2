@@ -110,11 +110,11 @@ public class Dansk implements Language{
 	 */
 	@Override
 	public String menu(){
-		return "Tast 1 for at skifte antal sider på terningerne\n" +
-				"Tast 2 for at ændre sprog\n" +
-				"Tast 3 for at vise scoren\n"+
-				"Tast 4 for at afslutte spillet" +
-				"Tast 5 for at fortsætte spillet";
+		return "Tast 1 for at skifte antal sider på terningerne.\n" +
+				"Tast 2 for at ændre sprog.\n" +
+				"Tast 3 for at vise scoren.\n"+
+				"Tast 4 for at afslutte spillet.\n" +
+				"Tast 5 for at fortsætte spillet.";
 	}
 	
 	/**

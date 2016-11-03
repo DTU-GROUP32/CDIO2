@@ -111,11 +111,11 @@ public class English implements Language{
 	 */
 	@Override
 	public String menu(){
-		return "Type 1 to change sides on dice\n" +
-				"Type 2 to change language\n" +
-				"Type 3 to show the score\n"+
-				"Type 4 to end the game\n" +
-				"Type 5 to continue the game";
+		return "Type 1 to change sides on dice.\n" +
+				"Type 2 to change language.\n" +
+				"Type 3 to show the score.\n"+
+				"Type 4 to end the game.\n" +
+				"Type 5 to continue the game.";
 	}
 
 	/**
