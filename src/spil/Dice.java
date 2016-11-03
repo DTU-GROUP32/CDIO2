@@ -6,18 +6,18 @@ public class Dice {
 	private int faceValue; // Current face value of the dice
 	
 	/**
-	 * Default constructor
+	 * Default constructor, where dice has 6 sides
 	 */
 	public Dice() {
-		this(2);
+		this(6);
 	}
 	
 	/**
-	 * Secondary constructor
+	 * Secondary constructor, changes the number of sides on of the dice
 	 * @param sides
 	 */
-	public Dice(int faceValue) {
-		this.sides = faceValue;
+	public Dice(int sides) {
+		this.sides = sides;
 	}
 	
 	/**
@@ -52,7 +52,4 @@ public class Dice {
 	public void roll() {
 		this.faceValue = (int) ((Math.random()*sides)+1);
 	}
-	
-	
-	
 }

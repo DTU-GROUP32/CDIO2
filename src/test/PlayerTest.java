@@ -2,44 +2,47 @@ package test;
 
 import static org.junit.Assert.*;
 
-
-import org.junit.After;
 import org.junit.Before;
+import org.junit.After;
 import org.junit.Test;
+import org.junit.Assert;
 
 import spil.*;
 
 public class PlayerTest {
-	int id,nextId;
-	Player player;
-	Bank bankAccount;
-	@Before
-	public void setUp() throws Exception {
-		bankAccount = new Bank(1000);
-		player = new Player();
-		player.setPlayerName("Player");
-		
-	}
-
-	
-	@Test
-	public final void getBalance() {
-//		bankAccount.changeBalance(1000);
-//		assertEquals(bankAccount.getBalance(), 1000);
-		int currentBalance = 1000;
-		int activePlayer = player.getBankAccount().getBalance();
-		assertEquals(currentBalance, activePlayer);
-	}
-	
-	@Before
-    public void  setId() throws Exception {
-        id = nextId++ ;
+    Player player;
+    @Before
+    public void setUp() throws Exception {
+        player = new Player("Test");
     }
-	
+
+    @After
+    public void tearDown() throws Exception {
+        player.setNextID(0);
+        player = null;
+    }
+
+    @Test
+    public final void getName() throws Exception {
+        Assert.assertEquals(player.getName(), "Test");
+    }
+
+    @Test
+    public final void setName() throws Exception {
+        player.setName("Test2");
+        Assert.assertEquals("Test2", player.getName());
+    }
+
     @Test
     public final void getId() throws Exception {
-        assertEquals(player.getNextID(), 1);
+        Assert.assertEquals(player.getID(), 0);
+        player = new Player("new player");
+        Assert.assertEquals(player.getID(), 1);
     }
     
-
+    @Test
+    public final void getBank() throws Exception {
+        Bank playerBank = player.getBank();
+        Assert.assertEquals(1000, playerBank.getBalance());
+    }
 }
