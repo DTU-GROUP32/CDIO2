@@ -140,8 +140,11 @@ public class GameBoard {
 		// Change dice sides
 		case "1":
 			String subchoice = this.getInput(language.changeDices());
-			if(diceCup.setDiceSides(Character.getNumericValue(subchoice.charAt(0)), Character.getNumericValue(subchoice.charAt(2))))
-				System.out.println(language.printDiceChangeSucces());
+			if(subchoice.length() > 2) {
+				if(diceCup.setDiceSides(Character.getNumericValue(subchoice.charAt(0)), Character.getNumericValue(subchoice.charAt(2))))
+					System.out.println(language.printDiceChangeSucces());
+				break;
+			}
 			else System.out.println(language.printDiceChangeNotExecuted());
 			break;
 			// Change Language
