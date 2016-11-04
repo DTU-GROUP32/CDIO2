@@ -31,7 +31,7 @@ public class Dansk implements Language{
 	 */
 	@Override
 	public String readyToBegin(){
-		return "Spillet vil nu begynde. Den spiller der først når 3000 mønter har vundet spillet. + '\n' + Du kan skrive help når det bliver din tur, for en åbne en hjælpemenu "; // Skal bruger trykke på noget for at starte?
+		return "\nSpillet vil nu begynde. Den spiller der først når 3000 mønter har vundet spillet\nDu kan skrive help når det bliver din tur, for en åbne en hjælpemenu "; // Skal bruger trykke på noget for at starte?
 	}
 	
 	/**
@@ -39,7 +39,7 @@ public class Dansk implements Language{
 	 * @return
 	 */
 	public String preMsg(Player player){
-		return "Det er " + player.getName() + "'s tur"; // getbank.getbalance
+		return "\nDet er " + player.getName() + "'s tur, tryk på 'enter' for at slå!"; // getbank.getbalance
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class Dansk implements Language{
 	 */
 	@Override
 	public String postMsg(Player player){
-		return "Efter denne runde har " + player.getName() + " nu " + player.getBank().getBalance() + " point\n";
+		return "Efter denne runde har " + player.getName() + " nu " + player.getBank().getBalance() + " mønter";
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class Dansk implements Language{
 	 */
 	@Override
 	public String winnerMsg(Player player){
-		return player.getName() + " Har vundet spillet med " + player.getBank().getBalance() + "mønter!";
+		return player.getName() + " har vundet spillet med " + player.getBank().getBalance() + "mønter!";
 	}
 	/**
 	 * Prints the available commands in the menu.
@@ -110,7 +110,11 @@ public class Dansk implements Language{
 	 */
 	@Override
 	public String menu(){
-		return "Skriv 1 for regler" + '\n' + "Skriv 2 for pointstillingen" + '\n' + "Skriv 3 for at skifte terninger" + '\n' + "Skriv 4 for at afslutte spillet";
+		return "Tast 1 for at skifte antal sider på terningerne.\n" +
+				"Tast 2 for at ændre sprog.\n" +
+				"Tast 3 for at vise scoren.\n"+
+				"Tast 4 for at afslutte spillet.\n" +
+				"Tast 5 for at fortsætte spillet.";
 	}
 	
 	/**
@@ -152,7 +156,7 @@ public class Dansk implements Language{
 	 */
 	@Override
 	public String changeDices(){
-		return "Indtast hvor mange øjne de to terninger skal have"; // Summen måtte kun gå op til 12?
+		return "Indtast hvor mange øjne de to terninger skal have, på formatet \"x,y\" - summen skal være 12"; // Summen måtte kun gå op til 12?
 	}
 	
 	/**
@@ -173,17 +177,6 @@ public class Dansk implements Language{
 		return "Terningerne kunne ikke ændres";
 	}
 
-	/**
-	 * Prints game menu.
-	 * @return
-	 */
-	@Override
-	public String printGameMenu(){
-		return "Tast 1 for at fortsætte spillet\n" +
-				"Tast 2 for at ændre sprog\n" +
-				"Tast 3 for at vise scoren\n"+
-				"Tast 4 for at afslutte spillet";
-	}
 	/**
 	 * Notifies of language change
 	 * @return String

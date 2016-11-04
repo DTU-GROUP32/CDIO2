@@ -86,12 +86,6 @@ public interface Language {
 	 */
 	public String printDiceChangeNotExecuted();
 	/**
-	 * Prints game menu.
-	 * @return
-	 */
-	public String printGameMenu();
-
-	/**
 	 * Notifies of language change
 	 * @return String
 	 */

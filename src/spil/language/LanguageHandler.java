@@ -127,13 +127,6 @@ public class LanguageHandler {
 	public String printDiceChangeNotExecuted(){
 		return selectedLanguage.printDiceChangeNotExecuted();
 	}
-	/**
-	 * Prints game menu.
-	 * @return String
-	 */
-	public String printGameMenu(){
-		return selectedLanguage.printGameMenu();
-	}
 
 	/**
 	 * Notifies of language change

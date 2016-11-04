@@ -10,17 +10,17 @@ import spil.DiceCup;
 import static org.junit.Assert.*;
 
 public class DiceCupTest {
-	DiceCup dices;
+	DiceCup diceCup;
 
 	@Before
 	public void setUp() throws Exception {
-		dices = new DiceCup(4);
-		dices.rollDices();
+		diceCup = new DiceCup(4);
+		diceCup.rollDices();
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		dices = null;
+		diceCup = null;
 	}
 
 	/**
@@ -29,8 +29,14 @@ public class DiceCupTest {
 	 */
 	@Test
 	public void getDices() throws Exception {
-		Dice dice = new Dice();
-		assertEquals(dices.getDices()[0], dice);
+		DiceCup diceCup2 = diceCup;
+		
+		for(int i = 0; i < diceCup.getDices().length; i++) {
+			assertEquals(diceCup.getDices()[i], diceCup2.getDices()[i]);
+		}
+		
+		assertEquals(diceCup2.getDices().length, diceCup.getDices().length);
+		
 	}
 
 	
@@ -41,15 +47,15 @@ public class DiceCupTest {
 	 */
 	@Test
 	public void rollDices() throws Exception {
-		int d1before = dices.getDices()[0].getFaceValue();
-		int d2before = dices.getDices()[1].getFaceValue();
-		int d3before = dices.getDices()[2].getFaceValue();
-		int d4before = dices.getDices()[3].getFaceValue();
-		dices.rollDices();
-		int d1after = dices.getDices()[0].getFaceValue();
-		int d2after = dices.getDices()[1].getFaceValue();
-		int d3after = dices.getDices()[2].getFaceValue();
-		int d4after = dices.getDices()[3].getFaceValue();
+		int d1before = diceCup.getDices()[0].getFaceValue();
+		int d2before = diceCup.getDices()[1].getFaceValue();
+		int d3before = diceCup.getDices()[2].getFaceValue();
+		int d4before = diceCup.getDices()[3].getFaceValue();
+		diceCup.rollDices();
+		int d1after = diceCup.getDices()[0].getFaceValue();
+		int d2after = diceCup.getDices()[1].getFaceValue();
+		int d3after = diceCup.getDices()[2].getFaceValue();
+		int d4after = diceCup.getDices()[3].getFaceValue();
 		assertFalse(d1before == d1after && d2before == d2after && d3before == d3after && d4before == d4after);
 	}
 
@@ -60,9 +66,9 @@ public class DiceCupTest {
 	@Test
 	public void getSum() throws Exception {
 		int expected = 0;
-		for(Dice dice : dices.getDices())
+		for(Dice dice : diceCup.getDices())
 			expected += dice.getFaceValue();
-		int actual = dices.getSum();
+		int actual = diceCup.getSum();
 		assertTrue(expected == actual);
 	}
 
@@ -72,10 +78,10 @@ public class DiceCupTest {
 	 */
 	@Test
 	public void setDiceSides() throws Exception {
-		dices = new DiceCup();
-		int before = dices.getDices()[0].getSides();
-		dices.setDiceSides(5, 7);
-		int after = dices.getDices()[0].getSides();
+		diceCup = new DiceCup();
+		int before = diceCup.getDices()[0].getSides();
+		diceCup.setDiceSides(5, 7);
+		int after = diceCup.getDices()[0].getSides();
 		assertFalse(before == after);
 	}
 
